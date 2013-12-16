@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html>
+<html ng-app>
 <head>
   <meta charset="utf-8">
   <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
@@ -20,6 +20,7 @@
 
   <!-- Extra Codiqa features -->
   <script src="https://d10ajoocuyu32n.cloudfront.net/codiqa.ext.js"></script>
+  <script src="js/angular.min.js"></script>
    
 </head>
 <body>
@@ -27,7 +28,7 @@
 <div data-role="page" id="page1">
     <div id="calculator" data-theme="a" data-role="header" data-position="fixed">
         <h3 id="page-title">
-            CAWA TOOLS
+            {{page-title}} Calculator
         </h3>
     </div>
     <div data-role="content">
@@ -95,18 +96,18 @@
             <div data-role="navbar" data-iconpos="top">
                 <ul>
                     <li>
-                        <a href="#page1" data-transition="fade" data-theme="" data-icon="plus"
+                        <a href="#page1" data-transition="slide" data-theme="" data-icon="plus"
                         class="ui-btn-active ui-state-persist">
                             Calculator
                         </a>
                     </li>
                     <li>
-                        <a href="#page1" data-transition="fade" data-theme="" data-icon="star">
+                        <a href="#page2" data-transition="slide" data-theme="" data-icon="star">
                             Profiles
                         </a>
                     </li>
                     <li>
-                        <a href="#page1" data-transition="fade" data-theme="" data-icon="gear">
+                        <a href="#page3" data-transition="slide" data-theme="" data-icon="gear">
                             Params
                         </a>
                     </li>
@@ -115,5 +116,73 @@
         </div>
     </div>
 </div>
+
+<!--Profiles-->
+<div data-role="page" id="page2">
+    <div id="calculator" data-theme="a" data-role="header" data-position="fixed">
+        <h3 id="page-title">
+            {{page-title}} Profiles
+        </h3>
+    </div>
+  Profiles
+    <div data-theme="a" data-role="footer" data-position="fixed">
+        <div data-theme="a" data-role="footer" data-position="fixed">
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li>
+                        <a href="#page1" data-transition="slide" data-theme="" data-icon="plus">
+                            Calculator
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page2" data-transition="slide" data-theme="" data-icon="star" class="ui-btn-active ui-state-persist">
+                            Profiles
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page3" data-transition="slide" data-theme="" data-icon="gear">
+                            Params
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
+<!--Params-->
+<div data-role="page" id="page3">
+    <div id="calculator" data-theme="a" data-role="header" data-position="fixed">
+        <h3 id="page-title">
+            {{page-title}} Params
+        </h3>
+    </div>
+  Params
+    <div data-theme="a" data-role="footer" data-position="fixed">
+        <div data-theme="a" data-role="footer" data-position="fixed">
+            <div data-role="navbar" data-iconpos="top">
+                <ul>
+                    <li>
+                        <a href="#page1" data-transition="slide" data-theme="" data-icon="plus">
+                        
+                            Calculator
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page2" data-transition="slide" data-theme="" data-icon="star">
+                            Profiles
+                        </a>
+                    </li>
+                    <li>
+                        <a href="#page3" data-transition="slide" data-theme="" data-icon="gear" class="ui-btn-active ui-state-persist">
+                            Params
+                        </a>
+                    </li>
+                </ul>
+            </div>
+        </div>
+    </div>
+</div>
+
 </body>
 </html>
