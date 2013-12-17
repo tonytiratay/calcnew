@@ -12,7 +12,18 @@
 </head>
 <body>
 
-
+<input type="number" ng-model="champs.resultat">
+<select name="champs" id="champs">
+  <option value="ht">HT</option>
+  <option value="ttc">TTC</option>
+  <option value="capital">Capital</option>
+  <option value="salaire">Salaire</option>
+  <option value="coTva">Cotisation TVA</option>
+  <option value="coPat">Cotisations Patronnales</option>
+  <option value="coSal">Cotisations Salariales</option>
+  <option value="coSup">Cotisations Supplémentaires</option>
+</select>
+<h2>{{champs.resultat}}</h2>
 
 </body>
 </html>
