@@ -7,7 +7,6 @@
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <title>Cawa Calculator</title>
   <LINK href="css/custom.css" rel="stylesheet" type="text/css">
-  <script src="js/angular.min.js"></script>
    
 </head>
 <body>
@@ -27,10 +26,10 @@
     </select>
     <h2>{{valueinput}}</h2>
 
-    <div data-ng-init="resultats = [{name:  'HT',   value: 0,   state:1},{name:  'TTC',   value: 0,   state:1},{name:  'Capital',   value: 0,   state:1},{name:  'Salaire',   value: 0,   state:1},{name:  'Cotisation TVA',   value: 0,   state:1},{name:  'Cotisation Supplementaire',   value: 0,   state:1},{name:  'Cotisations Patronales',   value: 0,   state:1},{name:  'Cotisations Salariales',   value: 0,   state:1}]">
+    <div ng-controller="SimpleController">
         <table>
         <tr data-ng-repeat="result in resultats">
-            <td>{{result.name }}</td>
+            <td>{{result.name | uppercase }}</td>
             <td>{{result.value }}</td>
         </tr>
         </table>
@@ -39,22 +38,20 @@
 </div>
 
 
-<script type="text/javascript">
-var resultat = function($scope){
-    $scope = [
-    {ht: 0, state:1 }
-    {ttc: 0, state:1 }
-    {capital: 0, state:1 }
-    {salaire: 0, state:1 }
-    {coTva: 0, state:1 }
-    {coSup: 0, state:1 }
-    {coPat: 0, state:1 }
-    {coSal: 0, state:1 }];
-};
-
-var typeinpupt = function($scope){
-    $scope.typeinpupt ='HT';
-    };
+<script src="js/angular.min.js"></script>
+<script>
+function SimpleController($scope) {
+    $scope.resultats = [
+    {name:  'HT',                       value: 0,   state:1},
+    {name:  'TTC',                      value: 0,   state:1},
+    {name:  'Capital',                  value: 0,   state:1},
+    {name:  'Salaire',                  value: 0,   state:1},
+    {name:  'Cotisation TVA',           value: 0,   state:1},
+    {name:  'Cotisation Supplementaire',value: 0,   state:1},
+    {name:  'Cotisations Patronales',   value: 0,   state:1},
+    {name:  'Cotisations Salariales',   value: 0,   state:1}
+    ];
+}
 </script>
 
 </body>
