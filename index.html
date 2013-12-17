@@ -6,24 +6,56 @@
   <meta name="apple-mobile-web-app-capable" content="yes">
   <meta name="apple-mobile-web-app-status-bar-style" content="black">
   <title>Cawa Calculator</title>
- 
+  <LINK href="css/custom.css" rel="stylesheet" type="text/css">
   <script src="js/angular.min.js"></script>
    
 </head>
 <body>
 
-<input type="number" ng-model="champs.resultat">
-<select name="champs" id="champs">
-  <option value="ht">HT</option>
-  <option value="ttc">TTC</option>
-  <option value="capital">Capital</option>
-  <option value="salaire">Salaire</option>
-  <option value="coTva">Cotisation TVA</option>
-  <option value="coPat">Cotisations Patronnales</option>
-  <option value="coSal">Cotisations Salariales</option>
-  <option value="coSup">Cotisations Supplémentaires</option>
-</select>
-<h2>{{champs.resultat}}</h2>
+<div class="container">
+    <h1>Profil: Coopérative</h1>
+    <input type="number" ng-model="valueinput">
+    <select name="type" id="type">
+      <option selected="selected">HT</option>
+      <option>TTC</option>
+      <option>Capital</option>
+      <option>Salaire</option>
+      <option>Cotisation TVA</option>
+      <option>Cotisation Cooperative</option>
+      <option>Cotisations Patronnales</option>
+      <option>Cotisations Salariales</option>
+    </select>
+    <h2>{{valueinput}}</h2>
+
+    <div data-ng-init="resultats = [{name:  'HT',   value: 0,   state:1},{name:  'TTC',   value: 0,   state:1},{name:  'Capital',   value: 0,   state:1},{name:  'Salaire',   value: 0,   state:1},{name:  'Cotisation TVA',   value: 0,   state:1},{name:  'Cotisation Supplementaire',   value: 0,   state:1},{name:  'Cotisations Patronales',   value: 0,   state:1},{name:  'Cotisations Salariales',   value: 0,   state:1}]">
+        <table>
+        <tr data-ng-repeat="result in resultats">
+            <td>{{result.name }}</td>
+            <td>{{result.value }}</td>
+        </tr>
+        </table>
+    </div>
+
+</div>
+
+
+<script type="text/javascript">
+var resultat = function($scope){
+    $scope = [
+    {ht: 0, state:1 }
+    {ttc: 0, state:1 }
+    {capital: 0, state:1 }
+    {salaire: 0, state:1 }
+    {coTva: 0, state:1 }
+    {coSup: 0, state:1 }
+    {coPat: 0, state:1 }
+    {coSal: 0, state:1 }];
+};
+
+var typeinpupt = function($scope){
+    $scope.typeinpupt ='HT';
+    };
+</script>
 
 </body>
 </html>
