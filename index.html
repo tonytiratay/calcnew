@@ -6,8 +6,19 @@
     <title>Foundation | Welcome</title>
     <link rel="stylesheet" href="css/foundation.css" />
     <script src="js/vendor/modernizr.js"></script>
+    <script type="text/javascript" src="js/angular.min.js"></script>
+    <script type="text/javascript" src="js/system.js"></script>
+    <script type="text/javascript" src="js/calculs.js"></script>
   </head>
-    <body>
+    <body ng-app="calculator" ng-controller="coopCtrl">
+      <div class="row">
+        <h1>Calculator</h1>
+        <input type="number" ng-model="entree" ></input>
+
+        <h2>{{entree}}</h2>
+        <h3 ng-model="ht"> {{ht}}</h3>
+      </div>
       
+
     </body>
 </html>
