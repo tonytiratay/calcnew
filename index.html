@@ -1,59 +1,13 @@
-<!DOCTYPE html>
-<html ng-app>
-<head>
-  <meta charset="utf-8">
-  <meta name="viewport" content="initial-scale=1.0, user-scalable=no">
-  <meta name="apple-mobile-web-app-capable" content="yes">
-  <meta name="apple-mobile-web-app-status-bar-style" content="black">
-  <title>Cawa Calculator</title>
-  <LINK href="css/custom.css" rel="stylesheet" type="text/css">
-   
-</head>
-<body>
-
-<div class="container">
-    <h1>Coopérative</h1>
-    <br/>
-    <input type="number" ng-model="valueinput">
-    <select name="type" id="type">
-      <option selected="selected">HT</option>
-      <option>TTC</option>
-      <option>Capital</option>
-      <option>Salaire</option>
-      <option>Cotisation TVA</option>
-      <option>Cotisation Cooperative</option>
-      <option>Cotisations Patronnales</option>
-      <option>Cotisations Salariales</option>
-    </select>
-    <h2>{{valueinput}}</h2>
-
-    <div ng-controller="SimpleController">
-        <table>
-        <tr data-ng-repeat="result in resultats">
-            <td>{{result.name | uppercase }}</td>
-            <td>{{result.value }}</td>
-        </tr>
-        </table>
-    </div>
-
-</div>
-
-
-<script src="js/angular.min.js"></script>
-<script>
-function SimpleController($scope) {
-    $scope.resultats = [
-    {name:  'HT',                       value: 0,   state:1},
-    {name:  'TTC',                      value: 0,   state:1},
-    {name:  'Capital',                  value: 0,   state:1},
-    {name:  'Salaire',                  value: 0,   state:1},
-    {name:  'Cotisation TVA',           value: 0,   state:1},
-    {name:  'Cotisation Supplementaire',value: 0,   state:1},
-    {name:  'Cotisations Patronales',   value: 0,   state:1},
-    {name:  'Cotisations Salariales',   value: 0,   state:1}
-    ];
-}
-</script>
-
-</body>
+<!doctype html>
+<html class="no-js" lang="en">
+  <head>
+    <meta charset="utf-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Foundation | Welcome</title>
+    <link rel="stylesheet" href="css/foundation.css" />
+    <script src="js/vendor/modernizr.js"></script>
+  </head>
+    <body>
+      
+    </body>
 </html>
