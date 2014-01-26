@@ -8,17 +8,33 @@
     <script src="js/vendor/modernizr.js"></script>
     <script type="text/javascript" src="js/angular.min.js"></script>
     <script type="text/javascript" src="js/system.js"></script>
-    <script type="text/javascript" src="js/calculs.js"></script>
-  </head>
-    <body ng-app="calculator" ng-controller="coopCtrl">
-      <div class="row">
-        <h1>Calculator</h1>
-        <input type="number" ng-model="entree" ></input>
+    <script type="text/javascript" src="js/conversions.js"></script>
 
-        <h2>{{entree}}</h2>
-        <h3 ng-model="ht"> {{ht}}</h3>
+  </head>
+
+
+    <body ng-app="calculator">
+      <div class="row" ng-controller="SystemCtrl">
+        <h1>Calculator</h1>
+        <input type="number" ng-model="input.value" ></input>
+            <FORM>
+            <SELECT name="type" ng-model="input.type">
+            <OPTION selected>HT</option>
+            <OPTION>TTC</option>
+            <OPTION>CAPITAL</option>
+            <OPTION>SALAIRE</option>
+            </SELECT>
+            </FORM>
+        <h3>HT: {{ input.value }}</h3> 
+        <h3>TTC: {{ htToTtc(input.value) | number:2 }}</h3> 
+        <h3>CAPITAL: {{ htToCapital(input.value) | number:2 }}</h3> 
+        <h3>Salaire: {{ htToSalaire(input.value) | number:2 }}</h3> 
+        
+
       </div>
       
+
+
 
     </body>
 </html>
