@@ -1,9 +1,3 @@
-document.addEventListener("deviceready", onDeviceReady, false);
-
-function onDeviceReady() {
- navigator.splashscreen.hide();
-}
-
 var calculator = angular.module('calculator', ['ngRoute', 'ngAnimate']);
 
 
