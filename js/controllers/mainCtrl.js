@@ -63,7 +63,7 @@ calculator.controller('mainCtrl', ['$scope', 'systemCtrl', '$location', function
 			$scope.params.chargessal= 0; 
 			$scope.params.chargespat= 0; 
 			$scope.params.cotisationcoop= 26.8; 
-			$scope.params.cotisationtitle='Cotisations sociales (%)';
+			$scope.params.cotisationtitle='Cotisations (%)';
 		}
 
 		else if (profile == 'entreprise') {
