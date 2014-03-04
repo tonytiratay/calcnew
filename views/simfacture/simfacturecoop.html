@@ -6,7 +6,7 @@
 
       <select ng-model="input.type">
       <option value="salaire" selected="selected">Pour toucher en net</option>
-      <option ng-if="!profile =='auto-entrepreneur'" value="brut">Pour toucher en brut</option>
+      <option ng-if="profile !='auto-entrepreneur'" value="brut">Pour toucher en brut</option>
       <!-- <option value="heures">Un nombre d'heures travaillées</option> -->
       </select>
 

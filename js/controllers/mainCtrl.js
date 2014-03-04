@@ -1,20 +1,21 @@
 calculator.controller('mainCtrl', ['$scope', 'systemCtrl', '$location', function($scope){
 
+	$scope.profilejustset = false;
+	$scope.profile = "non-defini";
 	$scope.checkProfile = function(){
-	if ($scope.profile =="non-defini"){
-		window.location.assign('#/profile');
-	}
-	};
-
-
-	$scope.back = function($scope){
-		window.history.back();
+		if ($scope.profile =="non-defini"){
+			window.location.assign('#/profile');
+		}
 	};
 
 	$scope.convertisseur = {
 		tva: 20,
 		value:100,
 		type: 'ht'
+	};
+
+	$scope.back = function($scope){
+		window.history.back();
 	};
 
 
@@ -25,9 +26,6 @@ calculator.controller('mainCtrl', ['$scope', 'systemCtrl', '$location', function
 		else {$scope.input.type = autre;}
 		
 	};
-
-	$scope.profile = "non-defini";
-	
 
 	$scope.params = {
 	tva: 20,
@@ -59,6 +57,7 @@ calculator.controller('mainCtrl', ['$scope', 'systemCtrl', '$location', function
 
 	$scope.setProfile = function(profile) {
 		$scope.profile = profile;
+				
 		if (profile == 'auto-entrepreneur') {
 			$scope.params.chargessal= 0; 
 			$scope.params.chargespat= 0; 
@@ -79,15 +78,31 @@ calculator.controller('mainCtrl', ['$scope', 'systemCtrl', '$location', function
 			$scope.params.cotisationcoop= 10; 
 			$scope.params.cotisationtitle='Cotisation coopérative (%)';
 		}
-		$scope.profilejustset = true;
-		window.location.assign('#/paramscoop');
+
 	};
 
-	$scope.profileSet = function(){
+	$scope.ifFirstConnect = function(profile){
+		if ($scope.profilejustset == false) {
+			$scope.profilejustset = true;
+			$scope.setProfile(profile);
+			window.location.assign('#/');
+		}
+
+		else if ($scope.profilejustset == true){
+			$scope.setProfile(profile);
+			window.history.back();	
+		};
+	};
+
+	var redirectTo = function(destination){
+		
+	};
+
+/*	var profileSet = function(){
 		$scope.profilejustset = false;
 		window.location.assign('#/');
 	};
-
+*/
 	$scope.resultats = [];
 
 	$scope.redirectifempty = function(){
