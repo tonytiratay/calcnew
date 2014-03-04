@@ -5,7 +5,7 @@
 
 
       <select ng-model="input.type">
-      <option ng-hide="profile =='auto-entrepreneur'" value="ht" selected="selected">Depuis un montant HT</option>
+      <option ng-if="!profile =='auto-entrepreneur'" value="ht" selected="selected">Depuis un montant HT</option>
       <option value="ttc">Depuis un montant TTC</option>
       <option value="heures">Un nombre d'heures travaillées</option>
       </select>

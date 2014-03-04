@@ -14,7 +14,7 @@
         <form name="parametres">
         <ul class="small-block-grid-1 medium-block-grid-2">
 
-            <li ng-hide="profile == 'auto-entrepreneur'">
+            <li ng-if="!profile == 'auto-entrepreneur'">
               <label>TVA (%)</label>
               <input type="number" name="tva" min="0" step="any" ng-model="params.tva" class="maininput" value="{{params.tva}}" ng-required="true"></input>
               <!-- <select name="tva" ng-model="params.tva" class="maininput" >
@@ -40,14 +40,14 @@
                La valeur de ce champ n'est pas correcte !</span>
             </li>
 
-            <li ng-hide="profile == 'auto-entrepreneur'">
+            <li ng-if="!profile == 'auto-entrepreneur'">
                <label>Charges Patronales (%)</label>
                <input type="number" name="chargespat" min="0" step="any" ng-minlength="1" ng-model="params.chargespat" class="maininput" value="{{params.chargespat}}" required></input>
                 <span class="error " ng-show="parametres.chargespat.$error.required">
                La valeur de ce champ n'est pas correcte !</span>
             </li>
 
-            <li ng-hide="profile == 'auto-entrepreneur'">
+            <li ng-if="!profile == 'auto-entrepreneur'">
                <label>Charges salariales (%)</label>
                <input type="number" name="chargessal" min="0" step="any" ng-minlength="1" ng-model="params.chargessal" class="maininput" value="{{params.chargessal}}" required></input>
                 <span class="error " ng-show="parametres.chargessal.$error.required">
