@@ -1,0 +1,10 @@
+calculator.factory('resultatsCtrl', function() {
+	
+
+
+
+
+
+
+
+});

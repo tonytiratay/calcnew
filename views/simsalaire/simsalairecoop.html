@@ -1,0 +1,22 @@
+<div class=" page"><div class="row">
+<h3 class="titre-rubrique">COMBIEN JE VAIS GAGNER </h3>
+<div ng-include src="'partials/sim-button-bar.html'"> </div>
+  <form ng-submit = "save()">
+
+
+      <select ng-model="input.type">
+      <option ng-hide="profile =='auto-entrepreneur'" value="ht" selected="selected">Depuis un montant HT</option>
+      <option value="ttc">Depuis un montant TTC</option>
+      <option value="heures">Un nombre d'heures travaillées</option>
+      </select>
+
+      <div class="row collapse">
+            <div class="small-12 medium-9 columns">
+            <input type="number" min="0" step="any" ng-model="input.value" autofocus class="maininput" placeholder="Saisissez un montant" required></input>
+            </div>
+            <div class="small-12 medium-3 columns">
+            <button type="submit" class="postfix success expand">GO <i class="fi-arrow-right"></i></button>
+            </div>
+      </div>     
+  </form>
+</div></div>

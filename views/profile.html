@@ -1,0 +1,22 @@
+<br><br><br>
+    <div class="row" >
+          
+          <div ng-if="profile == 'non-defini'" style="text-align:center;">
+		    <br><h3>Choisissez votre statut par défaut</h3>
+		    <p>Vous pourrez le modifier à tout moment dans la barre de menu</p><br><br>
+		  </div>
+
+        <button ng-click="setProfile('auto-entrepreneur')" class="round expand">
+        	<i class="fi-torso"></i> AUTO-ENTREPRENEUR
+        </button>
+        <button ng-click="setProfile('entreprise')" class="round expand">
+        	<i class="fi-torsos"></i> ENTREPRISE
+        </button>
+        <button ng-click="setProfile('cooperative')" class="round expand">
+        	<i class="fi-torsos-all"></i> COOPERATIVE
+        </button>
+        
+        
+ 	</div>
+
+

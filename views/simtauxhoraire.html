@@ -1,0 +1,20 @@
+<div class=" page"><div class="row">{{setOrigin("tauxhoraire")}}
+      <h3 class="titre-rubrique">CALCULER MON TAUX HORAIRE</h3>
+      <div class="row" style="clear:both;">
+          <div class="small-12 medium-6 columns">
+            <label>Temps dispo par mois (en heures)</label>
+            <input ng-model="simtauxhoraire.tempsmois" type="number" min="0" step="any" class="maininput" placeholder="Temps de travail"  required>
+          </div>
+          <div class="small-12 medium-6 columns">
+          <label>Salaire souhaité (net)</label>
+          <input ng-model="simtauxhoraire.salairesouhaite" type="number" min="0" step="any" class="maininput" placeholder="Salaire souhaité"  required >
+          </div>
+      </div>
+  
+</div></div>
+
+<div class="row"><br><br>
+<h5>Taux horaire net idéal: {{ simtauxhoraire.salairesouhaite / simtauxhoraire.tempsmois  | number:2}}</h5>
+<button ng-clic="saveTaux()">Utiliser ce taux</button>
+
+</div>

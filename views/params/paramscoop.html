@@ -1,0 +1,69 @@
+<div class=" page"><div class="row">
+  
+
+      <h3 class="titre-rubrique">Paramètres </h3>
+      <div ng-if="profilejustset" style="text-align:left; clear:both; color: #fff;">
+      <p>Sélectionnez les valeurs par défaut.<br>
+        Vous pourrez les modifier à tout instant lors de vos simulations. <br>
+      </p><br>
+      </div>
+      
+
+      
+      <div style="clear:both;">
+        <form name="parametres">
+        <ul class="small-block-grid-1 medium-block-grid-2 large-block-grid-3">
+
+            <li ng-hide="profile == 'auto-entrepreneur'">
+              <label>TVA (%)</label>
+              <input type="number" name="tva" min="0" step="any" ng-model="params.tva" class="maininput" value="{{params.tva}}" ng-required="true"></input>
+              <!-- <select name="tva" ng-model="params.tva" class="maininput" >
+                <option value="20">20</option>
+                <option value="7.7">7.7</option>
+                <option value="5">5</option>
+              </select> -->
+              <span class="error " ng-show="parametres.tva.$error.required">
+              La valeur de ce champ n'est pas correcte !</span>
+            </li>
+
+            <li>
+               <label>Taux horaire net (€)</label>
+               <input type="number" name="tauxhoraire" min="0" step="any" ng-minlength="1" ng-model="params.tauxhoraire" class="maininput" value="{{params.tauxhoraire}}" required></input>
+               <span class="error " ng-show="parametres.tauxhoraire.$error.required">
+               La valeur de ce champ n'est pas correcte !</span>
+            </li>
+
+            <li>
+              <label>{{params.cotisationtitle}}</label>
+              <input type="number" name="cotisationcoop" min="0" step="any" ng-minlength="1" ng-model="params.cotisationcoop" class="maininput" value="{{params.cotisationcoop}}" required></input>
+               <span class="error " ng-show="parametres.cotisationcoop.$error.required">
+               La valeur de ce champ n'est pas correcte !</span>
+            </li>
+
+            <li ng-hide="profile == 'auto-entrepreneur'">
+               <label>Charges Patronales (%)</label>
+               <input type="number" name="chargespat" min="0" step="any" ng-minlength="1" ng-model="params.chargespat" class="maininput" value="{{params.chargespat}}" required></input>
+                <span class="error " ng-show="parametres.chargespat.$error.required">
+               La valeur de ce champ n'est pas correcte !</span>
+            </li>
+
+            <li ng-hide="profile == 'auto-entrepreneur'">
+               <label>Charges salariales (%)</label>
+               <input type="number" name="chargessal" min="0" step="any" ng-minlength="1" ng-model="params.chargessal" class="maininput" value="{{params.chargessal}}" required></input>
+                <span class="error " ng-show="parametres.chargessal.$error.required">
+               La valeur de ce champ n'est pas correcte !</span>
+            </li>
+
+          </ul>
+          <p ng-hide="profile == 'auto-entrepreneur'" style="color:#fff; font-size:11px;">* Si vous ne connaissez pas les charges patronales et salariales qui s'appliquent à votre cas, laissez les valeurs par défaut. Celles-ci vous permettront de vous faire une idée relativement précise du salaire que vous pouvez vous verser. <br><br></p>
+
+          <p ng-show="profile == 'auto-entrepreneur'" style="color:#fff; font-size:11px;">Pour en savoir plus sur les cotisations à appliquer, vous pouvez <a style="color:#fff;" href="http://www.cci.fr/web/auto-entrepreneur/taux-de-cotisations-sociales">consulter le site du CCI en cliquant sur ce lien</a></p>
+
+          <button ng-hide="profilejustset" ng-click="validateParams()" class="success expand"> <i class="fi-check"></i> OK</button>
+          <button ng-show="profilejustset" ng-click="profileSet()" class="success expand"> <i class="fi-check"></i> OK</button>
+          <button ng-hide="profilejustset" ng-click="resetparams()" class="alert expand"><i class="fi-x"></i> Valeurs par défaut</button> 
+          </form>
+
+      </div>     
+      
+</div></div>

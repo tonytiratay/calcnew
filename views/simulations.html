@@ -1,0 +1,16 @@
+
+<div class="panel">
+	<div class="row">
+        <h3>Simulations</h3>
+    </div>
+</div>
+
+
+<div class="row collapse"> 
+
+	<div ng-repeat="resultat in resultats | orderBy:'date':true" class="bounce">
+    	<div simulation></div>
+	</div>
+	{{redirectifempty()}}
+
+</div>

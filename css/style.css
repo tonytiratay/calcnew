@@ -1,0 +1,162 @@
+html, body {
+min-height: 100%;}
+
+i {
+	font-size: 120%;
+	margin-right: 5px;
+	margin-left: 5px;
+}
+
+h1,h2,h3,h4,h5,h6,p, ul {
+	padding: 0 5px;
+	
+}
+
+body {
+	background: #fff;
+}
+
+button {
+	background: #2ba6cb;
+}
+
+label{
+	color: #fff;
+}
+
+#header {
+	position: fixed;
+	top: 0; left: 0; right: 0;
+	background: #fff;
+	height: 50px;
+	line-height: 50px;
+	z-index: 20000;
+	border-bottom: 4px solid  #2ba6cb;
+	padding: 0 10px;
+}
+
+#header .site-title {
+	font-size: 1.2em;
+	color: #333;
+}
+
+.back {
+	position: relative;
+	background: #2ba6cb;
+	padding: 5px 10px;
+	margin: 0px 10px;
+	top: -3px;
+	color: #fff;
+	-webkit-border-radius: 7px; 
+	border-radius: 7px;
+	border: 1px solid #1ba1Ab;
+	font-size: 13px;
+
+}
+
+.notif {
+	position: relative;
+	background: #f00;
+	padding: 5px 10px;
+	margin: 0px 10px;
+	top: -3px;
+	color: #fff;
+	-webkit-border-radius: 50%; 
+	border-radius: 50%;
+	font-size: 16px;
+
+}
+
+
+.titre-rubrique {
+	font-size:1.7em; 
+	color: #fff; 
+	float:left; 
+	margin-right: 15px;
+}
+
+.container {
+	position: absolute;
+	top: 50px; left: 0; right: 0;
+}
+
+.up {
+	position: relative;
+	top: -10px;
+}
+
+
+
+td {
+	text-align: center;
+}
+th {
+	width: 25%;
+}
+
+.card {
+	background: #fff;
+}
+
+.titre-sim {
+	color: #FFF;
+	background: #2ba6cb;
+	font-style: 1em;
+	padding: 15px 20px;
+	width: 70%; 
+	-webkit-border-radius: 0 50px 0 0;
+	border-radius: 0 50px 0 0;
+}
+
+.icon {
+	float: right; 
+	margin: 30px 10px; 
+	padding: 0px;
+	width: 30px;
+/*	background:#fff;
+	border:1px solid #CDCDCD;*/
+}
+
+.panel h1, .panel h2, .panel h3, .panel h4 {
+	color: white;
+}
+.panel {
+/*	margin-bottom: 0;
+	padding-bottom: 0;*/
+	background: #2ba6cb;
+	border: none;
+	z-index: 15000;
+}
+
+.page {
+	padding: 30px 20px;
+	min-height: 100%;
+	background: #2ba6cb;
+	border: none;
+	z-index: 15000;
+}
+
+.blue {
+	background: #2ba6cb;
+}
+
+.green {
+	background: #6fd672;
+}
+
+
+.light {
+	background: #fbfbfb;
+	color:#666;
+}
+
+
+.panel img {
+	margin: 15px;
+}
+
+.separation {
+	padding: 2px;
+	background: #2ba6cb;
+	margin-bottom: 25px;
+}

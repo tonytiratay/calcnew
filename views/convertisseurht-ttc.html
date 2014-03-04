@@ -1,0 +1,31 @@
+<div class=" page"><div class="row">
+  <form ng-submit = "save()">
+
+
+      <h3 class="titre-rubrique">CONVERTISSEUR TVA </h3>
+      <div class="row collapse" style="clear:both;">
+        <label>TVA (%)</label>
+      <div class="small-12 medium-3 columns">
+      <input ng-model="convertisseur.tva" type="number" min="0" step="any" class="maininput columns" placeholder="Taux TVA" required value="20">
+      </div>
+      </div>
+      
+
+              <label>Valeur à convertir (€)</label>
+      <div class="row collapse">
+            <div class="small-12 medium-9 columns">
+            <input type="number" min="0" step="any" ng-model="convertisseur.value" autofocus class="maininput" placeholder="Saisissez un montant" required></input>
+            </div>
+            <div class="small-12 medium-3 columns">
+            <select ng-model="convertisseur.type" value="ht">
+              <option value="ht" selected>HT</option>
+              <option value="ttc">TTC</option>
+            </select>
+            </div>
+      </div> 
+      <div >
+      <h4 style="color:white;" ng-if="convertisseur.type== 'ht'">{{convertisseur.value + (convertisseur.value * convertisseur.tva / 100) | number:2}} € TTC</h4> 
+      <h4 style="color:white;" ng-if="convertisseur.type== 'ttc'">{{convertisseur.value * (100 / (100 + convertisseur.tva)) | number:2}} € HT</h4> 
+      </div>
+  </form>
+</div></div>
