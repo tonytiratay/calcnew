@@ -40,27 +40,27 @@
           Soit environ <b>{{resultat.salaire / resultat.params.tauxhoraire | number:0}} heures travaillées</b><br>
         <i class="fi-play"></i>  
           {{resultat.params.tauxhoraire}}€ net / heure<br>
-        <i class="fi-play"></i>
-          Cotisation patronales: <b>{{resultat.benefice - resultat.brut  | number:2}} €</b><br>  
-        <i class="fi-play"></i>   
-          Cotisation salariales: <b>{{resultat.brut - resultat.salaire | number:2}} €</b><br>  
-        <i class="fi-play"></i>
-          TVA utilisée : <b>{{resultat.params.tva}} %</b> ( soit {{ resultat.ttc - resultat.ht | number:2}} € )<br>  
-        <div ng-if="resultat.profil == 'entreprise'">
+        <i class="fi-play"></i> 
+          TVA utilisée : <b>{{resultat.params.tva}} %</b> ( soit {{ resultat.ttc - resultat.ht | number:2}} € )<br> 
+        <span ng-if="resultat.profil == 'cooperative'">
           <i class="fi-play"></i>
            Cotisation coopérative: <b>{{resultat.params.cotisationcoop}}%</b> ( soit {{resultat.ht * resultat.params.cotisationcoop / 100 | number:2}} € ) <br>
-        </div>  
-        <div ng-if="resultat.profil == 'entreprise'">
-          <i class="fi-play"></i>
-           Cotisation optionnelle sur le HT: <b>{{resultat.params.cotisationcoop}}% </b>( soit {{resultat.ht * resultat.params.cotisationcoop / 100 | number:2}} € )<br>  
-        </div>
-
-      <ol style="font-size:12px; color:#aaa;">
-        <li ng-if="resultat.profil=='entreprise'"></li>
-        <li>Votre salaire brut a été estimé avec une <b>cotisation patronnale de {{resultat.params.chargespat}} %</b> sur la somme restante</li>
-        <li>Votre salaire net a été estimé quant à lui avec une <b>cotisation salariale de {{resultat.params.chargessal}} %</b> sur votre salaire brut</li>
-        </ol>
+        </span>  
+        <span ng-if="resultat.profil == 'entreprise' ">
+          <span ng-if="resultat.params.cotisationcoop != 0"><i class="fi-play"></i>
+           Cotisation optionnelle sur le HT: <b>{{resultat.params.cotisationcoop}}% </b>( soit {{resultat.ht * resultat.params.cotisationcoop / 100 | number:2}} € )<br>  </span>
+        </span>
+        <i class="fi-play"></i>
+          Cotisation patronales: <b>{{resultat.params.chargespat}} %</b> (soit {{resultat.benefice - resultat.brut  | number:2}} € )<br>  
+        <i class="fi-play"></i>   
+          Cotisation salariales: <b>{{resultat.params.chargessal}} %</b> (soit {{resultat.brut - resultat.salaire | number:2}} € )<br>  
+       
+        
      </p>
+     <ol style="font-size:12px; color:#aaa;">
+        <li>Votre salaire brut a été estimé en retirant les charges patronnales sur ce qu'il reste de votre facture HT</li>
+        <li>Votre salaire net est estimé en retirant les charges salariales sur votre salaire brut</li>
+      </ol>
 </div>
 
 

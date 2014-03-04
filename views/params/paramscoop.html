@@ -34,34 +34,41 @@
             </li>
 
             <li>
-              <label>{{params.cotisationtitle}}</label>
+              <label>{{params.cotisationtitle}} <span ng-if="profile =='auto-entrepeneur'" >(2)</span><span ng-if="profile !='auto-entrepeneur'" >(1)</span></label>
               <input type="number" name="cotisationcoop" min="0" step="any" ng-minlength="1" ng-model="params.cotisationcoop" class="maininput" value="{{params.cotisationcoop}}" required></input>
                <span class="error " ng-show="parametres.cotisationcoop.$error.required">
                La valeur de ce champ n'est pas correcte !</span>
             </li>
 
             <li ng-if="profile != 'auto-entrepreneur'">
-               <label>Charges Patronales (%)</label>
+               <label>Charges Patronales (%)(2)</label>
                <input type="number" name="chargespat" min="0" step="any" ng-minlength="1" ng-model="params.chargespat" class="maininput" value="{{params.chargespat}}" required></input>
                 <span class="error " ng-show="parametres.chargespat.$error.required">
                La valeur de ce champ n'est pas correcte !</span>
             </li>
 
             <li ng-if="profile != 'auto-entrepreneur'">
-               <label>Charges salariales (%)</label>
+               <label>Charges salariales (%)(2)</label>
                <input type="number" name="chargessal" min="0" step="any" ng-minlength="1" ng-model="params.chargessal" class="maininput" value="{{params.chargessal}}" required></input>
                 <span class="error " ng-show="parametres.chargessal.$error.required">
                La valeur de ce champ n'est pas correcte !</span>
             </li>
 
           </ul>
-          <p ng-hide="profile == 'auto-entrepreneur'" style="color:#fff; font-size:11px;">* Si vous ne connaissez pas les charges patronales et salariales qui s'appliquent à votre cas, laissez les valeurs par défaut. Celles-ci vous permettront de vous faire une idée relativement précise du salaire que vous pouvez vous verser. <br><br></p>
 
-          <p ng-show="profile == 'auto-entrepreneur'" style="color:#fff; font-size:11px;">Pour en savoir plus sur les cotisations à appliquer, vous pouvez <a style="color:#fff;" href="http://www.cci.fr/web/auto-entrepreneur/taux-de-cotisations-sociales">consulter le site du CCI en cliquant sur ce lien</a></p>
+          <ol style="color:#fff; font-size:13px;">
+              
+              <li ng-if="profile == 'auto-entrepreneur'">Pour en savoir plus sur les cotisations à appliquer, vous pouvez <a style="color:#fff;" href="http://www.cci.fr/web/auto-entrepreneur/taux-de-cotisations-sociales">consulter le site du CCI en cliquant sur ce lien</a></li>
+
+              <li ng-if="profile == 'cooperative'">Les cooperatives prélèvent généralement un pourcentage sur les factures pour leurs frais de gestion. Si vous ne le connaissez pas, demandez le.</a></li>
+
+              <li ng-if="profile == 'entreprise'" >Si vous le souhaitez, vous pouvez prélver un pourcentage sur le HT pour le mettre de côté. Il ne sera ainsi pas utilisé pour verser un salaire</li>
+            
+              <li ng-if="profile != 'auto-entrepreneur'">Si vous ne connaissez pas les charges patronales et salariales qui s'appliquent à votre cas, laissez les valeurs par défaut. Celles-ci vous permettront de vous faire une idée relativement précise du salaire que vous pouvez vous verser. <br><br></li>
+          </ol>
+          
 
           <button ng-click="validateParams()" class="success expand"> <i class="fi-check"></i> OK</button>
-    <!--       <button ng-show="profilejustset" ng-click="profileSet()" class="success expand"> <i class="fi-check"></i> OK</button> -->
-          <!-- <button ng-click="resetparams()" class="alert expand"><i class="fi-x"></i> Valeurs par défaut</button>  -->
           </form>
 
       </div>     

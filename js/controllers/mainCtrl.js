@@ -69,7 +69,7 @@ calculator.controller('mainCtrl', ['$scope', 'systemCtrl', '$location', function
 			$scope.params.chargessal= 22; 
 			$scope.params.chargespat= 42; 
 			$scope.params.cotisationcoop= 0; 
-			$scope.params.cotisationtitle='Cotisations sur le HT (%) - optionnel';
+			$scope.params.cotisationtitle='Cotisations sur le HT (%)';
 		}
 
 		else if (profile == 'cooperative') {
