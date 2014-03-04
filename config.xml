@@ -18,10 +18,7 @@
     </author>
 
     <icon src="icon.png" />
-   <gap:plugin name="org.apache.cordova.splashscreen" />
-    <feature name="SplashScreen">
-    <param name="android-package" value="org.apache.cordova.splashscreen.SplashScreen" />
-    <param name="ios-package" value="CDVSplashScreen" />
-</feature>
+    <gap:splash src="splash.png" />
+    <preference name="SplashScreenDelay" value="5000" />
 
 </widget>
