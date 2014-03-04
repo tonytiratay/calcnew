@@ -18,29 +18,32 @@
 
       <tr>
         <th>TTC</th>
-        <th>COT. PATRONALES</th>
         <th>SALAIRE BRUT</th>
       </tr> 
 
       <tr>
         <td style="color:#FF0000">{{resultat.ttc | number:2}} €</td>
-        <td>{{resultat.benefice - resultat.brut  | number:2}} €</td>
         <td>{{resultat.brut | number:2}} €</td>
       </tr>
       
       <tr>
         <th>HT</th>
-        <th>COT. SALARIALES </th>
         <th>SALAIRE NET </th>
       </tr>
       <tr >
         <td>{{resultat.ht | number:2}} €</td> 
-        <td>{{resultat.brut - resultat.salaire | number:2}} €</td>
         <td style="color:#FF0000">{{resultat.salaire | number:2}} €</td>
       </tr>
       </table>
-      <p><i class="fi-play"></i> 
-        Soit environ <b>{{resultat.salaire / resultat.params.tauxhoraire | number:0}} heures travaillées</b><br><i class="fi-play"></i>  {{resultat.params.tauxhoraire}}€ net / heure
+      <p>
+        <i class="fi-play"></i> 
+          Soit environ <b>{{resultat.salaire / resultat.params.tauxhoraire | number:0}} heures travaillées</b><br>
+        <i class="fi-play"></i>  
+          {{resultat.params.tauxhoraire}}€ net / heure<br>
+        <i class="fi-play"></i>
+          Cotisation patronales: {{resultat.benefice - resultat.brut  | number:2}} €<br>  
+        <i class="fi-play"></i>   
+          Cotisation salariales: {{resultat.brut - resultat.salaire | number:2}} €<br>  
       <ol style="font-size:12px; color:#aaa;">
         <li>La TVA utilisée pour cette simulation est de <b>{{resultat.params.tva}} % ( soit {{ resultat.ttc - resultat.ht | number:2}} € )</b> </li>
         <li ng-if="resultat.profil=='cooperative'">Une <b>cotisation de {{resultat.params.cotisationcoop}}% ( soit {{resultat.ht * resultat.params.cotisationcoop / 100 | number:2}} € )</b> pour votre coopérative a été retirée sur votre HT</li>
@@ -72,7 +75,7 @@
       </tr> 
 
       <tr>
-        <td>{{resultat.ttc | number:2}} €</td>
+        <td style="color:#FF0000">{{resultat.ttc | number:2}} €</td>
         <td style="color:#FF0000">{{resultat.salaire | number:2}} €</td>
       </tr>
       
