@@ -7,6 +7,7 @@ if (profile != 'auto-entrepreneur'){
 		ht = input.value;	
 		var params = parametres;
 		var today = new Date();
+		var cout = input.cout;
 		var resultat = { 
 			ht: ht,
 			ttc: htToTtc(ht, params),
@@ -14,7 +15,7 @@ if (profile != 'auto-entrepreneur'){
 			brut: htToBrut(ht, params),
 			salaire: htToSalaire(ht, params),
 			date: today,
-			type: "Depuis un HT de " + ht + '€',
+			type: "Un HT de " + ht + '€',
 			params: {
 				tva: params.tva,
 				tauxhoraire: params.tauxhoraire,
@@ -22,7 +23,8 @@ if (profile != 'auto-entrepreneur'){
 				chargespat: params.chargespat,
 				chargessal: params.chargessal
 				},
-			profil: profil
+			profil: profil,
+			cout: cout
 			};
 			return resultat;
 		}
@@ -33,6 +35,7 @@ if (profile != 'auto-entrepreneur'){
 			ttc = input.value;
 			ht = ttcToHt(ttc, params);
 			var today = new Date();	
+			var cout = input.cout;
 			var resultat = { 
 			ht: ht,
 			ttc: htToTtc(ht, params),
@@ -40,7 +43,7 @@ if (profile != 'auto-entrepreneur'){
 			brut: htToBrut(ht, params),
 			salaire: htToSalaire(ht, params),
 			date: today,
-			type: "Depuis un TTC de " + ttc + '€',
+			type: "Un TTC de " + ttc + '€',
 			params: {
 				tva: params.tva,
 				tauxhoraire: params.tauxhoraire,
@@ -48,7 +51,8 @@ if (profile != 'auto-entrepreneur'){
 				chargespat: params.chargespat,
 				chargessal: params.chargessal
 				},
-			profil: profil
+			profil: profil,
+			cout: cout
 			};
 			return resultat;
 	}
@@ -60,6 +64,7 @@ if (profile != 'auto-entrepreneur'){
 			salaire = params.tauxhoraire * heures;
 			ht = salaireToHt(salaire, params);
 			var today = new Date();
+			var cout = input.cout;
 			var resultat = { 
 			ht: ht,
 			ttc: htToTtc(ht, params),
@@ -67,7 +72,7 @@ if (profile != 'auto-entrepreneur'){
 			brut: htToBrut(ht, params),
 			salaire: htToSalaire(ht, params),
 			date: today,
-			type: "Depuis un temps de travail de " + heures + ' heures',
+			type: "Un temps de travail de " + heures + ' heures',
 			params: {
 				tva: params.tva,
 				tauxhoraire: params.tauxhoraire,
@@ -75,7 +80,8 @@ if (profile != 'auto-entrepreneur'){
 				chargespat: params.chargespat,
 				chargessal: params.chargessal
 				},
-			profil: profil
+			profil: profil,
+			cout: cout
 			};
 			return resultat;
 	}
@@ -86,6 +92,7 @@ if (profile != 'auto-entrepreneur'){
 			salaire = input.value;
 			ht = salaireToHt(salaire, params);
 			var today = new Date();	
+			var cout = input.cout;
 			var resultat = { 
 			ht: ht,
 			ttc: htToTtc(ht, params),
@@ -93,7 +100,7 @@ if (profile != 'auto-entrepreneur'){
 			brut: htToBrut(ht, params),
 			salaire: htToSalaire(ht, params),
 			date: today,
-			type: "Depuis un salaire net de " + salaire + '€',
+			type: "Un salaire net de " + salaire + '€',
 			params: {
 				tva: params.tva,
 				tauxhoraire: params.tauxhoraire,
@@ -101,7 +108,8 @@ if (profile != 'auto-entrepreneur'){
 				chargespat: params.chargespat,
 				chargessal: params.chargessal
 				},
-			profil: profil
+			profil: profil,
+			cout: cout
 
 			};
 			return resultat;
@@ -113,6 +121,7 @@ if (profile != 'auto-entrepreneur'){
 			brut = input.value;
 			ht = brutToHt(brut, params);
 			var today = new Date();	
+			var cout = input.cout;
 			var resultat = { 
 			ht: ht,
 			ttc: htToTtc(ht, params),
@@ -120,7 +129,7 @@ if (profile != 'auto-entrepreneur'){
 			brut: htToBrut(ht, params),
 			salaire: htToSalaire(ht, params),
 			date: today,
-			type: "Depuis un salaire brut de " + brut + '€',
+			type: "Un salaire brut de " + brut + '€',
 			params: {
 				tva: params.tva,
 				tauxhoraire: params.tauxhoraire,
@@ -128,7 +137,8 @@ if (profile != 'auto-entrepreneur'){
 				chargespat: params.chargespat,
 				chargessal: params.chargessal
 				},
-			profil: profil
+			profil: profil,
+			cout: cout
 
 			};
 			return resultat;
@@ -141,12 +151,13 @@ else {
 			var params = parametres;
 			ttc = input.value;
 			var today = new Date();	
+			var cout = input.cout;
 			var resultat = { 
 			ttc: ttc,
 			ht: ttcToHt(ttc, params),
 			salaire: ttcToSalaireAe(ttc, params),
 			date: today,
-			type: "Depuis un TTC de " + ttc + '€',
+			type: "Un TTC de " + ttc + '€',
 			params: {
 				tva: params.tva,
 				tauxhoraire: params.tauxhoraire,
@@ -154,7 +165,8 @@ else {
 				chargespat: params.chargespat,
 				chargessal: params.chargessal
 				},
-			profil: profil
+			profil: profil,
+			cout: cout
 			};
 			return resultat;
 	}
@@ -166,12 +178,13 @@ else {
 			var ttc= salaireToTtcAe(salaire,params);
 			var ht= ttcToHt(ttc,params);
 			var today = new Date();
+			var cout = input.cout;
 			var resultat = { 
 			salaire : salaire,
 			ttc: ttc,
 			ht: ht,
 			date: today,
-			type: "Depuis un temps de travail de " + heures + ' heures',
+			type: "Uun temps de travail de " + heures + ' heures',
 			params: {
 				tva: params.tva,
 				tauxhoraire: params.tauxhoraire,
@@ -179,7 +192,8 @@ else {
 				chargespat: params.chargespat,
 				chargessal: params.chargessal
 				},
-			profil: profil
+			profil: profil,
+			cout: cout
 			};
 			return resultat;
 	}
@@ -190,12 +204,13 @@ else {
 			var ttc = salaireToTtcAe(salaire, params);
 			var ht = ttcToHt(ttc, params);
 			var today = new Date();	
+			var cout = input.cout;
 			var resultat = { 
 			ht: ht,
 			ttc: ttc,
 			salaire: salaire,
 			date: today,
-			type: "Depuis un salaire net de " + salaire + '€',
+			type: "Un salaire net de " + salaire + '€',
 			params: {
 				tva: params.tva,
 				tauxhoraire: params.tauxhoraire,
@@ -203,7 +218,8 @@ else {
 				chargespat: params.chargespat,
 				chargessal: params.chargessal
 				},
-			profil: profil
+			profil: profil,
+			cout: cout
 
 			};
 			return resultat;

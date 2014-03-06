@@ -19,7 +19,7 @@ calculator.controller('mainCtrl', ['$scope', 'systemCtrl', '$location', function
 	};
 
 
-	$scope.input = { value: '', type: 'ht' };
+	$scope.input = { value: '', type: 'ht', cout: false };
 	
 	$scope.setInput = function(ae, autre){
 		if ($scope.profile == 'auto-entrepreneur'){$scope.input.type = ae;}
@@ -33,7 +33,16 @@ calculator.controller('mainCtrl', ['$scope', 'systemCtrl', '$location', function
 	cotisationcoop: 10,
 	chargespat: 42,
 	chargessal: 22,
-	mettredecote: 0
+	mettredecote: 0,
+	};
+
+	$scope.setToCout = function(word){
+		if (word == 'yes'){
+			$scope.input.cout = true;
+			}
+		else if (word == 'no'){
+			$scope.input.cout = false;
+		}
 	};
 
 	$scope.resetparams = function(){
