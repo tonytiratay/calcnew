@@ -19,7 +19,7 @@ calculator.controller('mainCtrl', ['$scope', 'systemCtrl', '$location', function
 	};
 
 
-	$scope.input = { value: '', type: 'ht', cout: false };
+	$scope.input = { value: 100, type: 'ht', cout: false };
 	
 	$scope.setInput = function(ae, autre){
 		if ($scope.profile == 'auto-entrepreneur'){$scope.input.type = ae;}
@@ -112,11 +112,15 @@ calculator.controller('mainCtrl', ['$scope', 'systemCtrl', '$location', function
 		window.location.assign('#/');
 	};
 */
-	$scope.resultats = [];
-
-	$scope.redirectifempty = function(){
+	var redirectifempty = function(){
     	if ($scope.resultats == 0) {window.location.assign('#/');}
     };
+
+	$scope.resultats = [];
+
+	$scope.redirectifempty = redirectifempty();
+	
+	
 
 	$scope.ifroot = function(){
 		if (window.location.hash == "#/"){
