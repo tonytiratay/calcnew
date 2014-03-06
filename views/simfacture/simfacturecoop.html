@@ -1,15 +1,15 @@
 <div class=" page"><div class="row">
-<h3 class="titre-rubrique">COMBIEN COÛTE </h3>
+<h3 class="titre-rubrique">COMBIEN JE DOIS FACTURER </h3>
 <div ng-include src="'partials/sim-button-bar.html'"> </div>
   <form ng-submit = "save()">
 
 
       <select ng-model="input.type">
-      <option value="salaire" selected="selected">Un salaire net</option>
-      <option ng-if="profile !='auto-entrepreneur'" value="brut">Un salaire brut</option>
-      <option value="heures">Un nombre d'heures travaillées</option>
-      <option ng-if="profile !='auto-entrepreneur'" value="ht" selected="selected">Un montant HT</option>
-      <option value="ttc">Un montant TTC</option>
+      <option value="salaire" selected="selected">Pour obtenir un salaire net</option>
+      <option ng-if="profile !='auto-entrepreneur'" value="brut">Pour obtenir un salaire brut</option>
+      <option ng-if="profile !='auto-entrepreneur'" value="ht" selected="selected">Pour obtenir un montant HT</option>
+      <option value="heures">Pour un nombre d'heures travaillées</option>
+      <!-- <option value="ttc">Un montant TTC</option> -->
       <!-- <option value="heures">Un nombre d'heures travaillées</option> -->
       </select>
 

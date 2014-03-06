@@ -15,7 +15,7 @@ if (profile != 'auto-entrepreneur'){
 			brut: htToBrut(ht, params),
 			salaire: htToSalaire(ht, params),
 			date: today,
-			type: "Un HT de " + ht + '€',
+			type: "Un HT de " + ht + ' €',
 			params: {
 				tva: params.tva,
 				tauxhoraire: params.tauxhoraire,
@@ -43,7 +43,7 @@ if (profile != 'auto-entrepreneur'){
 			brut: htToBrut(ht, params),
 			salaire: htToSalaire(ht, params),
 			date: today,
-			type: "Un TTC de " + ttc + '€',
+			type: "Un TTC de " + ttc + ' €',
 			params: {
 				tva: params.tva,
 				tauxhoraire: params.tauxhoraire,
@@ -100,7 +100,7 @@ if (profile != 'auto-entrepreneur'){
 			brut: htToBrut(ht, params),
 			salaire: htToSalaire(ht, params),
 			date: today,
-			type: "Un salaire net de " + salaire + '€',
+			type: "Un salaire net de " + salaire + ' €',
 			params: {
 				tva: params.tva,
 				tauxhoraire: params.tauxhoraire,
@@ -129,7 +129,7 @@ if (profile != 'auto-entrepreneur'){
 			brut: htToBrut(ht, params),
 			salaire: htToSalaire(ht, params),
 			date: today,
-			type: "Un salaire brut de " + brut + '€',
+			type: "Un salaire brut de " + brut + ' €',
 			params: {
 				tva: params.tva,
 				tauxhoraire: params.tauxhoraire,
@@ -157,7 +157,7 @@ else {
 			ht: ttcToHt(ttc, params),
 			salaire: ttcToSalaireAe(ttc, params),
 			date: today,
-			type: "Un TTC de " + ttc + '€',
+			type: "Un TTC de " + ttc + ' €',
 			params: {
 				tva: params.tva,
 				tauxhoraire: params.tauxhoraire,
@@ -184,7 +184,7 @@ else {
 			ttc: ttc,
 			ht: ht,
 			date: today,
-			type: "Uun temps de travail de " + heures + ' heures',
+			type: "Un temps de travail de " + heures + ' heures',
 			params: {
 				tva: params.tva,
 				tauxhoraire: params.tauxhoraire,
@@ -210,7 +210,7 @@ else {
 			ttc: ttc,
 			salaire: salaire,
 			date: today,
-			type: "Un salaire net de " + salaire + '€',
+			type: "Un salaire net de " + salaire + ' €',
 			params: {
 				tva: params.tva,
 				tauxhoraire: params.tauxhoraire,

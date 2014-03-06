@@ -4,17 +4,15 @@
 
 <div ng-hide="resultat.profil == 'auto-entrepreneur'" class="row  card">
       <a><img src="img/icons/trash.png" ng-click="remove(resultat)" class="icon"></a>
-      <p  ng-class="{false: 'titre-sim', true: 'titre-sim red'}[resultat.cout]">
-        <i class="fi-play"></i>
-        {{resultat.type | uppercase}}
-          <span ng-if="resultat.cout == true">coûte</span>
-          <span ng-if="resultat.cout != true">rapporte</span>
-        <small style="font-size:15px;">
+      <p  ng-class="{false: 'titre-sim green', true: 'titre-sim'}[resultat.cout]">
         <i ng-if="resultat.profil == 'cooperative' "class="fi-torsos-all"></i> 
         <i ng-if="resultat.profil == 'entreprise' "class="fi-torsos"></i>
         <i ng-if="resultat.profil == 'auto-entrepreneur' "class="fi-torso"></i>
-        {{resultat.profil | uppercase}} 
-        </small>
+        {{resultat.profil | uppercase}}
+        <i class="fi-play"></i>
+        {{resultat.type}}
+        <span ng-if="resultat.cout == true"> nécessite </span>
+        <span ng-if="resultat.cout != true"> me rapporte </span>
       </p>
 
       
@@ -41,9 +39,7 @@
       </table>
       <p>
         <i class="fi-play"></i> 
-          Soit environ <b>{{resultat.salaire / resultat.params.tauxhoraire | number:0}} heures travaillées</b><br>
-        <i class="fi-play"></i>  
-          {{resultat.params.tauxhoraire}}€ net / heure<br>
+          Temps de travail: <b>{{resultat.salaire / resultat.params.tauxhoraire | number:0}} heures</b> ( {{resultat.params.tauxhoraire}} € net / h )<br>
         <i class="fi-play"></i> 
           TVA utilisée : <b>{{resultat.params.tva}} %</b> ( soit {{ resultat.ttc - resultat.ht | number:2}} € )<br> 
         <span ng-if="resultat.profil == 'cooperative'">
@@ -72,17 +68,15 @@
 
 <div ng-show="resultat.profil == 'auto-entrepreneur'" class="row  card">
       <a><img src="img/icons/trash.png" ng-click="remove(resultat)" class="icon"></a>
-      <p  ng-class="{false: 'titre-sim', true: 'titre-sim red'}[resultat.cout]">
-        <i class="fi-play"></i>
-        {{resultat.type | uppercase}}
-          <span ng-if="resultat.cout == true">coûte</span>
-          <span ng-if="resultat.cout != true">rapporte</span>
-        <small style="font-size:15px;">
+      <p  ng-class="{false: 'titre-sim green', true: 'titre-sim'}[resultat.cout]">
         <i ng-if="resultat.profil == 'cooperative' "class="fi-torsos-all"></i> 
         <i ng-if="resultat.profil == 'entreprise' "class="fi-torsos"></i>
         <i ng-if="resultat.profil == 'auto-entrepreneur' "class="fi-torso"></i>
-        {{resultat.profil | uppercase}} 
-        </small>
+        {{resultat.profil | uppercase}}
+        <i class="fi-play"></i>
+        {{resultat.type}}
+        <span ng-if="resultat.cout == true"> nécessite </span>
+        <span ng-if="resultat.cout != true"> me rapporte </span>
       </p>
       
       <table class="responsive" style="width:100%;" >
@@ -99,9 +93,7 @@
       </table>
       <p>
         <i class="fi-play"></i> 
-          Soit environ<b>{{resultat.salaire / resultat.params.tauxhoraire | number:0}} heures travaillées</b><br> 
-        <i class="fi-play"></i>  
-          Taux horaire: <b>{{resultat.params.tauxhoraire}}€ net / heure</b><br>
+          Temps de travail: <b>{{resultat.salaire / resultat.params.tauxhoraire | number:0}} heures</b> ( {{resultat.params.tauxhoraire}} € net / h )<br>
         <i class="fi-play"></i>  
           Cotisations: <b>{{resultat.params.cotisationcoop}}%</b> ( soit {{resultat.ht * resultat.params.cotisationcoop / 100 | number:2}} € )<br>
      </p>
