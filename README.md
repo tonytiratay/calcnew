@@ -1,5 +1,6 @@
-
 #ALATAX
+
+[DEMO](http://alatax.cawastudio.com)
 
 ALATAX est un comparateur de simulations. Vous pouvez simuler des montants HT, TTC, des salaires net ou brut ou encore un temps de travail, pour obtenir toutes les valeurs correspondantes. Chaque simulation peut - être faite en tant qu'auto-entrepreneur, qu'entreprise ou que membre d'une coopérative. Les paramètres de calcul sont modifiables simulation par simulation.
 
