@@ -14,5 +14,5 @@ ALATAX est un comparateur de simulations. Vous pouvez simuler des montants HT, T
 
 * Ajouter frais
 * Ajouter type taux horaire: Net, Brut, HT, TTC
-* Cases à cocher pour simulations
+* Cases à cocher pour simulations + actions groupées
 * Voir détail simulation
