@@ -5,8 +5,8 @@
 
 
       <select ng-model="input.type">
-      <option ng-if="profile !='auto-entrepreneur'" value="ht" selected="selected">Un montant HT</option>
-      <option value="ttc">Un montant TTC</option>
+      <option ng-if="profile !='auto-entrepreneur'" value="ht">Un montant HT</option>
+      <option value="ttc" selected="selected">Un montant TTC</option>
       <option value="heures">Un nombre d'heures travaillées</option>
       <option ng-if="profile !='auto-entrepreneur'" value="brut">Un salaire brut</option>
       <option ng-if="profile !='auto-entrepreneur'" value="salaire">Un salaire net</option>
@@ -14,7 +14,7 @@
 
       <div class="row collapse">
             <div class="small-12 medium-9 columns">
-            <input type="number" min="0" step="any" ng-model="input.value" autofocus class="maininput" placeholder="Saisissez un montant" required></input>
+            <input type="number" min="0" step="any" ng-model="input.value" class="maininput" placeholder="Saisissez un montant" required></input>
             </div>
             <div class="small-12 medium-3 columns">
             <button type="submit" class="postfix success expand">GO <i class="fi-arrow-right"></i></button>

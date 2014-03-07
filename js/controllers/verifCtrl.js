@@ -30,7 +30,7 @@ if (profile != 'auto-entrepreneur'){
 		}
 
 	else if(input.type=='ttc'){
-		var profil = profile;
+			var profil = profile;
 			var params = parametres;
 			ttc = input.value;
 			ht = ttcToHt(ttc, params);

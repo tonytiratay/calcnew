@@ -1,16 +1,16 @@
 /* Bounce left and right */
 
 .bounce.ng-enter {
-  -webkit-animation:0.6s ease-out all;
-  animation:0.6s ease-out all;
+  -webkit-animation:0.2s ease-out all;
+  animation:0.2s ease-out all;
 }
 .bounce.ng-leave {
-  -webkit-animation:0.6s ease-out all;
-  animation:0.6s ease-out all;
+  -webkit-animation:0.2s ease-out all;
+  animation:0.2s ease-out all;
 }
  
-.bounce.ng-enter{ -webkit-animation-name: bounceInLeft; animation-name: bounceInLeft; }
-.bounce.ng-leave{ -webkit-animation-name: bounceOutRight; animation-name: bounceOutRight; }
+.bounce.ng-enter{ -webkit-animation-name: slideInLeft; animation-name: slideInLeft; }
+.bounce.ng-leave{ -webkit-animation-name: slideOutRight; animation-name: slideOutRight; }
 
 
 .bounceup.ng-enter, .bounceup.ng-leave {

@@ -11,7 +11,7 @@ calculator.controller('mainCtrl', ['$scope', 'systemCtrl', '$location', function
 	$scope.convertisseur = {
 		tva: 20,
 		value:100,
-		type: 'ht'
+		type: 'ttc'
 	};
 
 	$scope.back = function($scope){
@@ -19,22 +19,24 @@ calculator.controller('mainCtrl', ['$scope', 'systemCtrl', '$location', function
 	};
 
 
-	$scope.input = { value: 100, type: 'ht', cout: false };
+	$scope.input = { value: 100, type: 'ttc', cout: false };
 	
-	$scope.setInput = function(ae, autre){
-		if ($scope.profile == 'auto-entrepreneur'){$scope.input.type = ae;}
-		else {$scope.input.type = autre;}
-		
+	var setInput = function(inputtype){
+		$scope.input.type = inputtype;	
 	};
+
+	$scope.setInput = setInput;
 
 	$scope.params = {
 	tva: 20,
-	tauxhoraire: 15,
+	tauxhoraire: 20,
 	cotisationcoop: 10,
 	chargespat: 42,
 	chargessal: 22,
 	mettredecote: 0,
 	};
+
+
 
 	$scope.setToCout = function(word){
 		if (word == 'yes'){
@@ -43,6 +45,7 @@ calculator.controller('mainCtrl', ['$scope', 'systemCtrl', '$location', function
 		else if (word == 'no'){
 			$scope.input.cout = false;
 		}
+		console.log($scope.input.cout)
 	};
 
 	$scope.resetparams = function(){
@@ -72,6 +75,8 @@ calculator.controller('mainCtrl', ['$scope', 'systemCtrl', '$location', function
 			$scope.params.chargespat= 0; 
 			$scope.params.cotisationcoop= 26.8; 
 			$scope.params.cotisationtitle='Cotisations (%)';
+			if ($scope.input.cout == true) {setInput('salaire');}
+			else {setInput('ttc')}
 		}
 
 		else if (profile == 'entreprise') {
@@ -92,9 +97,9 @@ calculator.controller('mainCtrl', ['$scope', 'systemCtrl', '$location', function
 
 	$scope.ifFirstConnect = function(profile){
 		if ($scope.profilejustset == false) {
-			$scope.profilejustset = true;
-			$scope.setProfile(profile);
-			window.location.assign('#/');
+				$scope.profilejustset = true;
+				$scope.setProfile(profile);
+				window.location.assign('#/');
 		}
 
 		else if ($scope.profilejustset == true){
@@ -151,8 +156,4 @@ calculator.controller('mainCtrl', ['$scope', 'systemCtrl', '$location', function
 		if ($scope.params.tva === null) { $scope.params.tva = 0; }
 	};
 
-console.log(netToBrut(494.37, $scope.params));
-console.log(salaireToHt(494.37, $scope.params));
-console.log(salaireToHt(494.37, $scope.params));
-console.log(salaireToHt(494.37, $scope.params));
  }]);

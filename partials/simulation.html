@@ -4,7 +4,7 @@
 
 <div ng-hide="resultat.profil == 'auto-entrepreneur'" class="row  card">
       <a><img src="img/icons/trash.png" ng-click="remove(resultat)" class="icon"></a>
-      <p  ng-class="{false: 'titre-sim green', true: 'titre-sim'}[resultat.cout]">
+      <p  ng-class="{'auto-entrepreneur': 'titre-sim green', 'entreprise': 'titre-sim', 'cooperative': 'titre-sim orange'}[resultat.profil]">
         <i ng-if="resultat.profil == 'cooperative' "class="fi-torsos-all"></i> 
         <i ng-if="resultat.profil == 'entreprise' "class="fi-torsos"></i>
         <i ng-if="resultat.profil == 'auto-entrepreneur' "class="fi-torso"></i>
@@ -68,7 +68,7 @@
 
 <div ng-show="resultat.profil == 'auto-entrepreneur'" class="row  card">
       <a><img src="img/icons/trash.png" ng-click="remove(resultat)" class="icon"></a>
-      <p  ng-class="{false: 'titre-sim green', true: 'titre-sim'}[resultat.cout]">
+      <p  ng-class="{'auto-entrepreneur': 'titre-sim green', 'entreprise': 'titre-sim', 'cooperative': 'titre-sim orange'}[resultat.profil]">
         <i ng-if="resultat.profil == 'cooperative' "class="fi-torsos-all"></i> 
         <i ng-if="resultat.profil == 'entreprise' "class="fi-torsos"></i>
         <i ng-if="resultat.profil == 'auto-entrepreneur' "class="fi-torso"></i>

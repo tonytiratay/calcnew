@@ -7,12 +7,11 @@
   	</a>
   </div>
   <div ng-if="profile != 'non-defini'" style="position: absolute; left:35%; right:35%; text-align:center; color:#000;" class="show-for-medium-up">
-    <a href="#/profile" class=" animate bounceup">
+    <a href="#/profile">
       <i ng-if="profile == 'cooperative' "class="fi-torsos-all"></i> 
       <i ng-if="profile == 'entreprise' "class="fi-torsos"></i>
       <i ng-if="profile == 'auto-entrepreneur' "class="fi-torso"></i>
-      {{profile | uppercase}}
-    </a>
+      {{profile | uppercase}}<a/>
   </div>
 
   <div>{{ifroot()}}
