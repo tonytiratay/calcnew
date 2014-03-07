@@ -1,15 +1,17 @@
+
+#ALATAX
+
+ALATAX est un comparateur de simulations. Vous pouvez simuler des montants HT, TTC, des salaires net ou brut ou encore un temps de travail, pour obtenir toutes les valeurs correspondantes. Chaque simulation peut - être faite en tant qu'auto-entrepreneur, qu'entreprise ou que membre d'une coopérative. Les paramètres de calcul sont modifiables simulation par simulation.
+
+
 # Bugs
 
-* Si params vide --> Simulation incohérente. Remplacer par 0
-* Les charges patronales et salariales ne changent pas le résultat
+* Simulation depuis HT dans combien rapporte = Simulation depuis TTC
 
 
 #Todo
 
 * Ajouter frais
-* Ajouter profils
-* Ajouter "Mettre de côté" dans params
+* Ajouter type taux horaire: Net, Brut, HT, TTC
 * Cases à cocher pour simulations
 * Voir détail simulation
-* Cumuler simulations
-* Valider les params --> 0 si vide
