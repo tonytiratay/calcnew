@@ -72,7 +72,7 @@ if (profile != 'auto-entrepreneur'){
 			brut: htToBrut(ht, params),
 			salaire: htToSalaire(ht, params),
 			date: today,
-			type: input.quantity + " fois un temps de travail de " + input.value + ' heures',
+			type: input.quantity + " jour(s) de travail de " + input.value + ' heures',
 			params: {
 				tva: params.tva,
 				tauxhoraire: params.tauxhoraire,
@@ -184,7 +184,7 @@ else {
 			ttc: ttc,
 			ht: ht,
 			date: today,
-			type: input.quantity + " fois un temps de travail de " + input.value + ' heures',
+			type: input.quantity + " jour(s) de travail de " + input.value + ' heures',
 			params: {
 				tva: params.tva,
 				tauxhoraire: params.tauxhoraire,

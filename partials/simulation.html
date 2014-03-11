@@ -10,9 +10,7 @@
         <i ng-if="resultat.profil == 'auto-entrepreneur' "class="fi-torso"></i>
         {{resultat.profil | uppercase}}<br>
         <i class="fi-play"></i>
-        {{resultat.type}}
-        <span ng-if="resultat.cout == true"> nécessite(nt) </span>
-        <span ng-if="resultat.cout != true"> me rapporte(nt) </span>
+        Pour {{resultat.type}}
       </p>
 
       
@@ -37,32 +35,46 @@
         <td style="color:#FF0000">{{resultat.salaire | number:2}} €</td>
       </tr>
       </table>
-      <p>
-        <i class="fi-play"></i> 
-          Temps de travail: <b>{{resultat.salaire / resultat.params.tauxhoraire | number:0}} heures</b> ( {{resultat.params.tauxhoraire}} € net / h )<br>
-        <i class="fi-play"></i> 
-          TVA utilisée : <b>{{resultat.params.tva}} %</b> ( soit {{ resultat.ttc - resultat.ht | number:2}} € )<br> 
-        <span ng-if="resultat.profil == 'cooperative'">
-          <i class="fi-play"></i>
-           Cotisation coopérative: <b>{{resultat.params.cotisationcoop}}%</b> ( soit {{resultat.ht * resultat.params.cotisationcoop / 100 | number:2}} € ) <br>
-        </span>  
-        <span ng-if="resultat.profil == 'entreprise' ">
-          <span ng-if="resultat.params.cotisationcoop != 0"><i class="fi-play"></i>
-           Cotisation optionnelle sur le HT: <b>{{resultat.params.cotisationcoop}}% </b>( soit {{resultat.ht * resultat.params.cotisationcoop / 100 | number:2}} € )<br>  </span>
-        </span>
-        <i class="fi-play"></i>
-        Cout employeur: <b>{{resultat.benefice | number:2 }} €</b><br>
-        <i class="fi-play"></i>
-          Cotisation patronales: <b>{{resultat.params.chargespat}} %</b> (soit {{resultat.benefice - resultat.brut  | number:2}} € )<br>  
-        <i class="fi-play"></i>   
-          Cotisation salariales: <b>{{resultat.params.chargessal}} %</b> (soit {{resultat.brut - resultat.salaire | number:2}} € )<br>  
+      <div class="row">
+        <div class="medium-6 columns">
+          <p>
+            <i class="fi-play"></i> 
+              Temps de travail: <b>{{resultat.salaire / resultat.params.tauxhoraire | number:0}} heures</b> ( {{resultat.params.tauxhoraire}} € net / h )<br>
+            <i class="fi-play"></i> 
+              TVA utilisée : <b>{{resultat.params.tva}} %</b> ( soit {{ resultat.ttc - resultat.ht | number:2}} € )<br> 
+            <i class="fi-play"></i>
+            Cout employeur: <b>{{resultat.benefice | number:2 }} €</b><br>
+          </p>
+        </div>
+        <div class="medium-6 columns">
+          <p>
+            <span ng-if="resultat.profil == 'entreprise' ">
+              <span ng-if="resultat.params.cotisationcoop != 0"><i class="fi-play"></i>
+               Cotisation optionnelle sur le HT: <b>{{resultat.params.cotisationcoop}}% </b>( soit {{resultat.ht * resultat.params.cotisationcoop / 100 | number:2}} € )<br>  </span>
+            </span>
+            <span ng-if="resultat.profil == 'cooperative'">
+              <i class="fi-play"></i>
+               Cotisation coopérative: <b>{{resultat.params.cotisationcoop}}%</b> ( soit {{resultat.ht * resultat.params.cotisationcoop / 100 | number:2}} € ) <br>
+            </span>
+            <i class="fi-play"></i>
+              Cotisation patronales: <b>{{resultat.params.chargespat}} %</b> (soit {{resultat.benefice - resultat.brut  | number:2}} € )<br>  
+            <i class="fi-play"></i>   
+              Cotisation salariales: <b>{{resultat.params.chargessal}} %</b> (soit {{resultat.brut - resultat.salaire | number:2}} € )<br>  
+          </p>
+        </div>
+      </div>
+      
+        
        
         
      </p>
-     <ol style="font-size:12px; color:#aaa;">
-        <li>Votre salaire brut a été estimé en retirant les charges patronnales sur ce qu'il reste de votre facture HT</li>
+     
+     <!-- <ol>
+        <li ng-if="resultat.params.cotisationcoop != 0">
+           Un prélèvement sur le HT de <b>{{resultat.params.cotisationcoop}}% </b> a été fait conformomément aux paramètres renseignés, soit {{resultat.ht * resultat.params.cotisationcoop / 100 | number:2}} €. </li>
+        <li>Votre salaire brut a été estimé en retirant les charges patronnales sur <span ng-if="resultat.params.cotisationcoop != 0"> ce qu'il reste de </span>votre HT</li>
         <li>Votre salaire net est estimé en retirant les charges salariales sur votre salaire brut</li>
-      </ol>
+      </ol> -->
 </div>
 
 
@@ -76,9 +88,7 @@
         <i ng-if="resultat.profil == 'auto-entrepreneur' "class="fi-torso"></i>
         {{resultat.profil | uppercase}}<br>
         <i class="fi-play"></i>
-        {{resultat.type}}
-        <span ng-if="resultat.cout == true"> nécessite(nt) </span>
-        <span ng-if="resultat.cout != true"> me rapporte(nt) </span>
+        Pour {{resultat.type}}
       </p>
       
       <table class="responsive" style="width:100%;" >
@@ -94,11 +104,14 @@
       
       </table>
       <p>
+
         <i class="fi-play"></i> 
           Temps de travail: <b>{{resultat.salaire / resultat.params.tauxhoraire | number:0}} heures</b> ( {{resultat.params.tauxhoraire}} € net / h )<br>
         <i class="fi-play"></i>  
           Cotisations: <b>{{resultat.params.cotisationcoop}}%</b> ( soit {{resultat.ttc * resultat.params.cotisationcoop / 100 | number:2}} € )<br>
      </p>
+     
+     </div>
 </div>
 
 <div ng-class="'separation'"></div>

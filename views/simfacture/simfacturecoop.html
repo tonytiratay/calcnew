@@ -1,26 +1,30 @@
 <div class=" page"><div class="row">
-<h3 class="titre-rubrique">COMBIEN NECESSITE</h3>
+<h3 class="titre-rubrique">COMBIEN FACTURER POUR</h3>
 <div ng-include src="'partials/sim-button-bar.html'"> </div>
   <form ng-submit = "save()">
 
       <div class="row collapse">
-        <div class="small-1 columns">
+        <div class="small-3 medium-1 columns">
           <input type="number" min="0" step="any" ng-model="input.quantity" class="maininput" placeholder="Saisissez un montant" required></input>
         </div>
-        <div class="small-4 columns">
+         <div class="small-8 medium-3 columns">
           <select ng-model="input.type">
             <option value="salaire" selected="selected">salaire(s) net de</option>
             <option ng-if="profile !='auto-entrepreneur'" value="brut">salaire(s) brut de</option>
-            <option ng-if="profile !='auto-entrepreneur'" value="ht">montant(s) HT de</option>
-            <option value="heures">fois un nombre d'heures travaillées</option>
+            <!-- <option ng-if="profile !='auto-entrepreneur'" value="ht">montant(s) HT de</option> -->
+            <option value="heures">jour(s) de travail de </option>
             <!-- <option value="ttc">Un montant TTC</option> -->
             <!-- <option value="heures">Un nombre d'heures travaillées</option> -->
           </select>
         </div>
-        <div class="small-7 columns">
+        <div class="small-9 medium-3 columns">
             <input type="number" min="0" step="any" ng-model="input.value" class="maininput" placeholder="Saisissez un montant" required></input>
         </div>  
-        <div class="small-12 columns">
+        <div class="small-2 columns">
+          <h3 ng-if="input.type != 'heures'" style="color:white;"> €</h3>
+          <h3 ng-if="input.type == 'heures'"style="color:white;"> heures</h3>
+        </div>
+         <div class="small-12 medium-3 columns">
             <button type="submit" class="postfix success expand">GO <i class="fi-arrow-right"></i></button>
         </div>
       </div>

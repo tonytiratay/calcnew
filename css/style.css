@@ -147,6 +147,26 @@ th {
 	z-index: 15000;
 }
 
+.alert {
+	display: inline-block;
+	margin: 5px;
+	padding: 10px 15px 3px 15px;
+	background: #d37676;
+	color: white;
+	margin-bottom: 15px;
+	-webkit-border-radius: 15px 0;
+	border-radius: 15px 0;
+
+}
+
+.alert h4 {
+	color: white;
+	font-size: 14px;
+}
+.alert ol {
+	font-size: 12px;
+}
+
 .blue {
 	background: #2ba6cb;
 }
