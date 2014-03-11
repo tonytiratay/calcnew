@@ -143,6 +143,34 @@ if (profile != 'auto-entrepreneur'){
 			};
 			return resultat;
 	}
+	else if(input.type=='cout-employeur'){
+		var profil = profile;
+			var params = parametres;
+			var coutemployeur = input.value * input.quantity;
+			ht = beneficeToHt(coutemployeur, params);
+			var today = new Date();	
+			var cout = input.cout;
+			var resultat = { 
+			ht: ht,
+			ttc: htToTtc(ht, params),
+			benefice: coutemployeur,
+			brut: htToBrut(ht, params),
+			salaire: htToSalaire(ht, params),
+			date: today,
+			type: input.quantity + " coût(s) employeur de " + input.value + ' €',
+			params: {
+				tva: params.tva,
+				tauxhoraire: params.tauxhoraire,
+				cotisationcoop: params.cotisationcoop,
+				chargespat: params.chargespat,
+				chargessal: params.chargessal
+				},
+			profil: profil,
+			cout: cout
+
+			};
+			return resultat;
+	}
 }
 
 else {

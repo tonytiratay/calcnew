@@ -1,12 +1,12 @@
 /* Bounce left and right */
 
 .bounce.ng-enter {
-  -webkit-animation:0.2s ease-out all;
-  animation:0.2s ease-out all;
+  -webkit-animation:0.3s ease-out all;
+  animation:0.3s ease-out all;
 }
 .bounce.ng-leave {
-  -webkit-animation:0.2s ease-out all;
-  animation:0.2s ease-out all;
+  -webkit-animation:0.3s ease-out all;
+  animation:0.3s ease-out all;
 }
  
 .bounce.ng-enter{ -webkit-animation-name: slideInLeft; animation-name: slideInLeft; }

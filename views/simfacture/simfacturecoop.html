@@ -11,10 +11,8 @@
           <select ng-model="input.type">
             <option value="salaire" selected="selected">salaire(s) net de</option>
             <option ng-if="profile !='auto-entrepreneur'" value="brut">salaire(s) brut de</option>
-            <!-- <option ng-if="profile !='auto-entrepreneur'" value="ht">montant(s) HT de</option> -->
+            <option ng-if="profile =='entreprise'" value="cout-employeur">coût employeur de</option>
             <option value="heures">jour(s) de travail de </option>
-            <!-- <option value="ttc">Un montant TTC</option> -->
-            <!-- <option value="heures">Un nombre d'heures travaillées</option> -->
           </select>
         </div>
         <div class="small-9 medium-3 columns">
@@ -25,7 +23,7 @@
           <h3 ng-if="input.type == 'heures'"style="color:white;"> heures</h3>
         </div>
          <div class="small-12 medium-3 columns">
-            <button type="submit" class="postfix success expand">GO <i class="fi-arrow-right"></i></button>
+            <button type="submit" autofocus = "autofocus" class="postfix success expand">GO <i class="fi-arrow-right"></i></button>
         </div>
       </div>
         
