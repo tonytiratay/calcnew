@@ -1,24 +1,28 @@
 <div class=" page"><div class="row">
-<h3 class="titre-rubrique">COMBIEN ME RAPPORTE </h3>
+<h3 class="titre-rubrique">COMBIEN VAUT</h3>
 <div ng-include src="'partials/sim-button-bar.html'"> </div>
   <form ng-submit = "save()">
-
-
-      <select ng-model="input.type">
-      <option ng-if="profile !='auto-entrepreneur'" value="ht">Un montant HT</option>
-      <option value="ttc" selected="selected">Un montant TTC</option>
-      <option value="heures">Un nombre d'heures travaillées</option>
-      <option ng-if="profile !='auto-entrepreneur'" value="brut">Un salaire brut</option>
-      <option ng-if="profile !='auto-entrepreneur'" value="salaire">Un salaire net</option>
-      </select>
-
       <div class="row collapse">
-            <div class="small-12 medium-9 columns">
+        <div class="small-1 columns">
+          <input ng-model="input.quantity" type="number" min="0" step="any"></input>
+        </div>
+        <div class="small-4 columns">
+          <select  ng-model="input.type">
+              <option ng-if="profile !='auto-entrepreneur'" value="ht">facture(s) HT de</option>
+              <option value="ttc" selected="selected">facture(s) TTC de</option>
+              <option value="heures">nombre d'heures travaillées de</option>
+              <option ng-if="profile !='auto-entrepreneur'" value="brut">salaire(s) brut de</option>
+              <option ng-if="profile !='auto-entrepreneur'" value="salaire">salaire(s) net de</option>
+          </select>
+        </div>
+        <div class="small-7 columns">
             <input type="number" min="0" step="any" ng-model="input.value" class="maininput" placeholder="Saisissez un montant" required></input>
-            </div>
-            <div class="small-12 medium-3 columns">
+        </div>
+        <div class="small-12 columns">
             <button type="submit" class="postfix success expand">GO <i class="fi-arrow-right"></i></button>
-            </div>
-      </div>     
+        </div>
+      
+      </div>
+          
   </form>
 </div></div>

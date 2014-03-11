@@ -19,7 +19,7 @@ calculator.controller('mainCtrl', ['$scope', 'systemCtrl', '$location', function
 	};
 
 
-	$scope.input = { value: 100, type: 'ttc', cout: false };
+	$scope.input = { quantity:1, value: 100, type: 'ttc', cout: false };
 	
 	var setInput = function(inputtype){
 		$scope.input.type = inputtype;	

@@ -1,25 +1,29 @@
 <div class=" page"><div class="row">
-<h3 class="titre-rubrique">COMBIEN JE DOIS FACTURER </h3>
+<h3 class="titre-rubrique">COMBIEN NECESSITE</h3>
 <div ng-include src="'partials/sim-button-bar.html'"> </div>
   <form ng-submit = "save()">
 
-
-      <select ng-model="input.type">
-      <option value="salaire" selected="selected">Pour obtenir un salaire net</option>
-      <option ng-if="profile !='auto-entrepreneur'" value="brut">Pour obtenir un salaire brut</option>
-      <option ng-if="profile !='auto-entrepreneur'" value="ht">Pour obtenir un montant HT</option>
-      <option value="heures">Pour un nombre d'heures travaillées</option>
-      <!-- <option value="ttc">Un montant TTC</option> -->
-      <!-- <option value="heures">Un nombre d'heures travaillées</option> -->
-      </select>
-
       <div class="row collapse">
-            <div class="small-12 medium-9 columns">
+        <div class="small-1 columns">
+          <input type="number" min="0" step="any" ng-model="input.quantity" class="maininput" placeholder="Saisissez un montant" required></input>
+        </div>
+        <div class="small-4 columns">
+          <select ng-model="input.type">
+            <option value="salaire" selected="selected">salaire(s) net de</option>
+            <option ng-if="profile !='auto-entrepreneur'" value="brut">salaire(s) brut de</option>
+            <option ng-if="profile !='auto-entrepreneur'" value="ht">montant(s) HT de</option>
+            <option value="heures">fois un nombre d'heures travaillées</option>
+            <!-- <option value="ttc">Un montant TTC</option> -->
+            <!-- <option value="heures">Un nombre d'heures travaillées</option> -->
+          </select>
+        </div>
+        <div class="small-7 columns">
             <input type="number" min="0" step="any" ng-model="input.value" class="maininput" placeholder="Saisissez un montant" required></input>
-            </div>
-            <div class="small-12 medium-3 columns">
+        </div>  
+        <div class="small-12 columns">
             <button type="submit" class="postfix success expand">GO <i class="fi-arrow-right"></i></button>
-            </div>
-      </div>     
+        </div>
+      </div>
+        
   </form>
 </div></div>

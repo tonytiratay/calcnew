@@ -26,7 +26,7 @@ var beneficeToBrut = function(input, params) {
 };
 
 var ttcToSalaireAe = function(input, params) { 
-	return input / (1 + params.cotisationcoop/100)
+	return input - input * (params.cotisationcoop/100)
 };
 
 var brutToNet = function(input, params){ 
@@ -43,7 +43,7 @@ var salaireToHt = function(input, params) {
 };
 
 var salaireToTtcAe = function(input, params) { 
-	return input * (1 + params.cotisationcoop/100)
+	return input / (1 - params.cotisationcoop/100)
 };
 
 var brutToHt = function(input, params) {

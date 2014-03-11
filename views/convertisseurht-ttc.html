@@ -20,8 +20,8 @@
           </div>
              
           <div class="small-12 medium-8 columns">
-                <h4 style="color:white; font-size:350%; text-align: center;" ng-if="convertisseur.type== 'ht'">{{convertisseur.value + (convertisseur.value * convertisseur.tva / 100) | number:2}} € TTC</h4> 
-                <h4 style="color:white; font-size:350%; text-align: center;" ng-if="convertisseur.type== 'ttc'">{{convertisseur.value * (100 / (100 + convertisseur.tva)) | number:2}} € HT</h4> 
+                <h4 style="color:white; font-size:250%; text-align: center;" ng-if="convertisseur.type== 'ht'">{{convertisseur.value + (convertisseur.value * convertisseur.tva / 100) | number:2}} € TTC</h4> 
+                <h4 style="color:white; font-size:250%; text-align: center;" ng-if="convertisseur.type== 'ttc'">{{convertisseur.value * (100 / (100 + convertisseur.tva)) | number:2}} € HT</h4> 
           </div> 
   </form>
   </div>

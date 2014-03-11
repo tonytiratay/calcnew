@@ -11,8 +11,8 @@
         {{resultat.profil | uppercase}}<br>
         <i class="fi-play"></i>
         {{resultat.type}}
-        <span ng-if="resultat.cout == true"> nécessite </span>
-        <span ng-if="resultat.cout != true"> me rapporte </span>
+        <span ng-if="resultat.cout == true"> nécessite(nt) </span>
+        <span ng-if="resultat.cout != true"> me rapporte(nt) </span>
       </p>
 
       
@@ -51,6 +51,8 @@
            Cotisation optionnelle sur le HT: <b>{{resultat.params.cotisationcoop}}% </b>( soit {{resultat.ht * resultat.params.cotisationcoop / 100 | number:2}} € )<br>  </span>
         </span>
         <i class="fi-play"></i>
+        Cout employeur: <b>{{resultat.benefice | number:2 }} €</b><br>
+        <i class="fi-play"></i>
           Cotisation patronales: <b>{{resultat.params.chargespat}} %</b> (soit {{resultat.benefice - resultat.brut  | number:2}} € )<br>  
         <i class="fi-play"></i>   
           Cotisation salariales: <b>{{resultat.params.chargessal}} %</b> (soit {{resultat.brut - resultat.salaire | number:2}} € )<br>  
@@ -75,8 +77,8 @@
         {{resultat.profil | uppercase}}<br>
         <i class="fi-play"></i>
         {{resultat.type}}
-        <span ng-if="resultat.cout == true"> nécessite </span>
-        <span ng-if="resultat.cout != true"> me rapporte </span>
+        <span ng-if="resultat.cout == true"> nécessite(nt) </span>
+        <span ng-if="resultat.cout != true"> me rapporte(nt) </span>
       </p>
       
       <table class="responsive" style="width:100%;" >
@@ -95,7 +97,7 @@
         <i class="fi-play"></i> 
           Temps de travail: <b>{{resultat.salaire / resultat.params.tauxhoraire | number:0}} heures</b> ( {{resultat.params.tauxhoraire}} € net / h )<br>
         <i class="fi-play"></i>  
-          Cotisations: <b>{{resultat.params.cotisationcoop}}%</b> ( soit {{resultat.ht * resultat.params.cotisationcoop / 100 | number:2}} € )<br>
+          Cotisations: <b>{{resultat.params.cotisationcoop}}%</b> ( soit {{resultat.ttc * resultat.params.cotisationcoop / 100 | number:2}} € )<br>
      </p>
 </div>
 

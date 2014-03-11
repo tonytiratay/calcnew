@@ -4,7 +4,7 @@ var verif = function(input,parametres,frais,profile){
 if (profile != 'auto-entrepreneur'){
 	if (input.type=='ht'){
 		var profil = profile;
-		ht = input.value;	
+		ht = input.value * input.quantity;	
 		var params = parametres;
 		var today = new Date();
 		var cout = input.cout;
@@ -15,7 +15,7 @@ if (profile != 'auto-entrepreneur'){
 			brut: htToBrut(ht, params),
 			salaire: htToSalaire(ht, params),
 			date: today,
-			type: "Un HT de " + ht + ' €',
+			type: input.quantity + " facture(s) HT de " + input.value + ' €',
 			params: {
 				tva: params.tva,
 				tauxhoraire: params.tauxhoraire,
@@ -32,7 +32,7 @@ if (profile != 'auto-entrepreneur'){
 	else if(input.type=='ttc'){
 			var profil = profile;
 			var params = parametres;
-			ttc = input.value;
+			ttc = input.value * input.quantity;
 			ht = ttcToHt(ttc, params);
 			var today = new Date();	
 			var cout = input.cout;
@@ -43,7 +43,7 @@ if (profile != 'auto-entrepreneur'){
 			brut: htToBrut(ht, params),
 			salaire: htToSalaire(ht, params),
 			date: today,
-			type: "Un TTC de " + ttc + ' €',
+			type: input.quantity + " facture(s) TTC de " + input.value + ' €',
 			params: {
 				tva: params.tva,
 				tauxhoraire: params.tauxhoraire,
@@ -60,7 +60,7 @@ if (profile != 'auto-entrepreneur'){
 	else if(input.type=='heures'){
 		var profil = profile;
 			var params = parametres;
-			var heures = input.value;
+			var heures = input.value * input.quantity;
 			salaire = params.tauxhoraire * heures;
 			ht = salaireToHt(salaire, params);
 			var today = new Date();
@@ -72,7 +72,7 @@ if (profile != 'auto-entrepreneur'){
 			brut: htToBrut(ht, params),
 			salaire: htToSalaire(ht, params),
 			date: today,
-			type: "Un temps de travail de " + heures + ' heures',
+			type: input.quantity + " fois un temps de travail de " + input.value + ' heures',
 			params: {
 				tva: params.tva,
 				tauxhoraire: params.tauxhoraire,
@@ -89,7 +89,7 @@ if (profile != 'auto-entrepreneur'){
 	else if(input.type=='salaire'){
 		var profil = profile;
 			var params = parametres;
-			salaire = input.value;
+			salaire = input.value * input.quantity;
 			ht = salaireToHt(salaire, params);
 			var today = new Date();	
 			var cout = input.cout;
@@ -100,7 +100,7 @@ if (profile != 'auto-entrepreneur'){
 			brut: htToBrut(ht, params),
 			salaire: htToSalaire(ht, params),
 			date: today,
-			type: "Un salaire net de " + salaire + ' €',
+			type: input.quantity + " salaire(s) net de " + input.value + ' €',
 			params: {
 				tva: params.tva,
 				tauxhoraire: params.tauxhoraire,
@@ -118,7 +118,7 @@ if (profile != 'auto-entrepreneur'){
 	else if(input.type=='brut'){
 		var profil = profile;
 			var params = parametres;
-			brut = input.value;
+			brut = input.value * input.quantity;
 			ht = brutToHt(brut, params);
 			var today = new Date();	
 			var cout = input.cout;
@@ -129,7 +129,7 @@ if (profile != 'auto-entrepreneur'){
 			brut: htToBrut(ht, params),
 			salaire: htToSalaire(ht, params),
 			date: today,
-			type: "Un salaire brut de " + brut + ' €',
+			type: input.quantity + " salaire(s) brut de " + input.value + ' €',
 			params: {
 				tva: params.tva,
 				tauxhoraire: params.tauxhoraire,
@@ -149,7 +149,7 @@ else {
 	if(input.type=='ttc'){
 		var profil = profile;
 			var params = parametres;
-			ttc = input.value;
+			ttc = input.value * input.quantity;
 			var today = new Date();	
 			var cout = input.cout;
 			var resultat = { 
@@ -157,7 +157,7 @@ else {
 			ht: ttcToHt(ttc, params),
 			salaire: ttcToSalaireAe(ttc, params),
 			date: today,
-			type: "Un TTC de " + ttc + ' €',
+			type: input.quantity + " factures TTC de " + input.value + ' €',
 			params: {
 				tva: params.tva,
 				tauxhoraire: params.tauxhoraire,
@@ -173,7 +173,7 @@ else {
 	else if(input.type=='heures'){
 		var profil = profile;
 			var params = parametres;
-			var heures = input.value;
+			var heures = input.value * input.quantity;
 			var salaire = params.tauxhoraire * heures;
 			var ttc= salaireToTtcAe(salaire,params);
 			var ht= ttcToHt(ttc,params);
@@ -184,7 +184,7 @@ else {
 			ttc: ttc,
 			ht: ht,
 			date: today,
-			type: "Un temps de travail de " + heures + ' heures',
+			type: input.quantity + " fois un temps de travail de " + input.value + ' heures',
 			params: {
 				tva: params.tva,
 				tauxhoraire: params.tauxhoraire,
@@ -200,7 +200,7 @@ else {
 	else if(input.type=='salaire'){
 		var profil = profile;
 			var params = parametres;
-			var salaire = input.value;
+			var salaire = input.value * input.quantity;
 			var ttc = salaireToTtcAe(salaire, params);
 			var ht = ttcToHt(ttc, params);
 			var today = new Date();	
@@ -210,7 +210,7 @@ else {
 			ttc: ttc,
 			salaire: salaire,
 			date: today,
-			type: "Un salaire net de " + salaire + ' €',
+			type: input.quantity + " salaire(s) net de " + input.value + ' €',
 			params: {
 				tva: params.tva,
 				tauxhoraire: params.tauxhoraire,
