@@ -3,7 +3,7 @@
 
   <div class="right">
   	<a href="#/simulations" ng-if="resultats.length > 0" class=" animate bounceup">
-  	 <span class="notif">{{resultats.length}} </span> 
+  	 <span class="notif">Simulations({{resultats.length}}) </span> 
   	</a>
   </div>
   <div ng-if="profile != 'non-defini'" style="position: absolute; left:35%; right:35%; text-align:center; color:#000;" class="show-for-medium-up">
@@ -16,7 +16,7 @@
 
   <div>{{ifroot()}}
     <a href="#/" class="site-title"><i class="fi-home"></i>ALATAX</a>
-    <a ng-click="validateParams()" ng-if="menutoshow == 'back'" ng-hide=" profile == 'non-defini'" class="animate bounceup"><span class="back"><i class="fi-arrow-left"></i>RETOUR</span> </a>
+    <a ng-click="validateParams()" ng-if="menutoshow == 'back'" ng-hide=" profile == 'non-defini'" class="animate bounceup "><span class="back show-for-medium-up"><i class="fi-arrow-left"></i>RETOUR</span> </a>
   </div>
 
 </div>

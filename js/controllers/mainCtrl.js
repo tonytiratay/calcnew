@@ -19,13 +19,24 @@ calculator.controller('mainCtrl', ['$scope', 'systemCtrl', '$location', function
 	};
 
 
-	$scope.input = { quantity:1, value: 100, type: 'ttc', cout: false };
+	$scope.input = { 
+		quantity:1, 
+		value: 100, 
+		type: 'ttc', 
+		cout: false 
+	};
 	
 	var setInput = function(inputtype){
 		$scope.input.type = inputtype;	
 	};
 
 	$scope.setInput = setInput;
+
+	$scope.setValue = function(){
+		if ($scope.input.type == "heures"){
+			$scope.input.value = 8;
+		}
+	};
 
 	$scope.params = {
 	tva: 20,
@@ -45,12 +56,11 @@ calculator.controller('mainCtrl', ['$scope', 'systemCtrl', '$location', function
 		else if (word == 'no'){
 			$scope.input.cout = false;
 		}
-		console.log($scope.input.cout)
 	};
 
 	$scope.resetparams = function(){
 		$scope.params.tva = 20;
-		$scope.params.tauxhoraire = 25;
+		$scope.params.tauxhoraire = 20;
 		$scope.params.cotisationcoop = 10;
 		$scope.params.chargespat = 42;
 		$scope.params.chargessal = 22;
@@ -60,11 +70,16 @@ calculator.controller('mainCtrl', ['$scope', 'systemCtrl', '$location', function
 
 	$scope.validateParams = function(){
 		if ($scope.params.tva == null) {$scope.params.tva = 20;}
-		else if ($scope.params.tauxhoraire == null) {$scope.params.tauxhoraire = 15;}
+		else if ($scope.params.tauxhoraire == null) {$scope.params.tauxhoraire = 20;}
 		else if ($scope.params.cotisationcoop == null) {$scope.params.cotisationcoop = 10;}
 		else if ($scope.params.chargespat == null) {$scope.params.chargespat = 42;}
 		else if ($scope.params.chargessal == null) {$scope.params.chargessal = 22;}
-		window.history.back();
+		
+		if ($scope.profilejustset){
+			window.location.assign('#/');
+			$scope.profilejustset = false;
+		}
+		else{window.history.back();}
 	};
 
 	$scope.setProfile = function(profile) {
@@ -99,7 +114,7 @@ calculator.controller('mainCtrl', ['$scope', 'systemCtrl', '$location', function
 		if ($scope.profilejustset == false) {
 				$scope.profilejustset = true;
 				$scope.setProfile(profile);
-				window.location.assign('#/');
+				window.location.assign('#/paramscoop');
 		}
 
 		else if ($scope.profilejustset == true){
@@ -112,11 +127,11 @@ calculator.controller('mainCtrl', ['$scope', 'systemCtrl', '$location', function
 		
 	};
 
-/*	var profileSet = function(){
+	var profileSet = function(){
 		$scope.profilejustset = false;
 		window.location.assign('#/');
 	};
-*/
+
 	var redirectifempty = function(){
     	if ($scope.resultats == 0) {window.location.assign('#/');}
     };

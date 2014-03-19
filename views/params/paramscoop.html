@@ -65,13 +65,13 @@
 
               <li ng-if="profile == 'cooperative'">Les cooperatives prélèvent généralement un pourcentage sur les factures pour leurs frais de gestion. Si vous ne le connaissez pas, demandez le.</a></li>
 
-              <li ng-if="profile == 'entreprise'" >Si vous le souhaitez, vous pouvez prélver un pourcentage sur le HT pour le mettre de côté. Il ne sera ainsi pas utilisé pour verser un salaire</li>
+              <li ng-if="profile == 'entreprise'" >Si vous le souhaitez, vous pouvez prélever un pourcentage sur le HT pour le mettre de côté. Il ne sera ainsi pas utilisé pour verser un salaire</li>
             
               <li ng-if="profile != 'auto-entrepreneur'">Si vous ne connaissez pas les charges patronales et salariales qui s'appliquent à votre cas, laissez les valeurs par défaut. Celles-ci vous permettront de vous faire une idée relativement précise du salaire que vous pouvez vous verser. <br><br></li>
           </ol>
           
 
-          <button ng-click="validateParams()" class="success expand"> <i class="fi-check"></i> OK</button>
+          <button ng-click="[validateParams()]" class="success expand" autofocus="autofocus"> <i class="fi-check"></i> OK</button>
           </form>
 
       </div>     
