@@ -147,7 +147,7 @@ th {
 	z-index: 15000;
 }
 
-.alert {
+/*.alert {
 	display: inline-block;
 	margin: 5px;
 	padding: 10px 15px 3px 15px;
@@ -157,7 +157,7 @@ th {
 	-webkit-border-radius: 15px 0;
 	border-radius: 15px 0;
 
-}
+}*/
 
 .alert h4 {
 	color: white;

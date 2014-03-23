@@ -59,13 +59,32 @@ calculator.controller('mainCtrl', ['$scope', 'systemCtrl', '$location', function
 	};
 
 	$scope.resetparams = function(){
-		$scope.params.tva = 20;
-		$scope.params.tauxhoraire = 20;
-		$scope.params.cotisationcoop = 10;
-		$scope.params.chargespat = 42;
-		$scope.params.chargessal = 22;
-		$scope.params.mettredecote = 0;
-		window.history.back();
+		if ($scope.profile == 'cooperative'){
+			$scope.params.tva = 20;
+			$scope.params.tauxhoraire = 20;
+			$scope.params.cotisationcoop = 10;
+			$scope.params.chargespat = 42;
+			$scope.params.chargessal = 22;
+			$scope.params.mettredecote = 0;
+		}
+		else if ($scope.profile == 'entreprise'){
+			$scope.params.tva = 20;
+			$scope.params.tauxhoraire = 20;
+			$scope.params.cotisationcoop = 0;
+			$scope.params.chargespat = 42;
+			$scope.params.chargessal = 22;
+			$scope.params.mettredecote = 0;
+		}
+
+		else if ($scope.profile == 'auto-entrepreneur'){
+			$scope.params.tva = 20;
+			$scope.params.tauxhoraire = 20;
+			$scope.params.cotisationcoop = 26.8;
+			$scope.params.chargespat = 0;
+			$scope.params.chargessal = 0;
+			$scope.params.mettredecote = 0;
+		}
+		
 	};
 
 	$scope.validateParams = function(){
