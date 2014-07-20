@@ -9,6 +9,9 @@
         </div>
          <div class="small-8 medium-3 columns">
           <select ng-model="input.type">
+            <option ng-if="profile !='auto-entrepreneur'" value="ht">facture(s) HT de</option>
+            <option value="ttc" selected="selected">facture(s) TTC de</option>
+            <option value="heures">jour(s) de travail de </option>
             <option value="salaire" selected="selected">salaire(s) net de</option>
             <option ng-if="profile !='auto-entrepreneur'" value="brut">salaire(s) brut de</option>
             <option ng-if="profile =='entreprise'" value="cout-employeur">coût employeur de</option>
